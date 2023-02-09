@@ -1,10 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro';
 import logo from '../assets/logo.png';
 import mediaIcon from '../assets/mediaIcon.png';
 import twitterIcon from '../assets/twitterIcon.png';
 import solarPanelImg from '../assets/solarPanelImg.png';
-
+import { CountdownMonths } from '../countDownTimer/CountdownTimer';
 
 const HomePage=()=> {
 
@@ -32,6 +32,7 @@ const HomePage=()=> {
             Pellentesque a finibus urna, 
             sed tempus esfinibus urna,sed tempus es.</Text>
      </TextField>
+     <CountdownMonths/>
      </HomePageWrapper>
   )
 }
@@ -119,16 +120,15 @@ const TextField = styled.div`
     position: absolute;
     width: 47%;
     top: 142px;
-    left: 21%;
+    left: 23%;
     height: 156px;
-//border:1px solid black;
+
 `
 const Title = styled.div`
 
 width: 100%;
-//height: 73px;
+font-family: 'Inter';
 margin-bottom: 9px;
-//font-family: ;
 font-style: normal;
 font-weight: 700;
 font-size: 60px;
@@ -141,8 +141,6 @@ flex-grow: 0;
 const Text =styled.div`
 
 width: 75%;
-//height: 87px;
-
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
