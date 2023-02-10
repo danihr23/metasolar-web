@@ -48,12 +48,12 @@ width:144px;
 height:28px ;
 position:absolute ;
 left:43px ;
-top:46px ;
+top:40px ;
 background-image: url(${logo}) ;
 `
 const NavWrapper = styled.div`
-width:45% ;
-height:520px ;
+width:53% ;
+height:708px ;
 position:absolute ;
 right:0px ;
 display:flex ;
@@ -61,14 +61,13 @@ justify-content:center ;
 background-color:#F1F7FD ;
 `
 const Navigation = styled.div`
-    width: 90%;
+    width: 85%;
     height: 11%;
-    //border: 1px solid black;
     position: absolute;
     display: flex;
-    top: 28px;
+    top: 21px;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around
 
 `
 const NavTool = styled.div`
@@ -80,9 +79,7 @@ font-style: normal;
 font-weight: 600;
 font-size: 14px;
 line-height: 17px;
-flex: none;
-order: 0;
-flex-grow: 0;
+
 
 `
 const Button = styled.div`
@@ -106,10 +103,10 @@ background-image: url(${props => props.background}) ;
 `
 const SolarPanelImg = styled.div`
         position: absolute;
-    width: 32%;
-    height: 244px;
-    left: 38%;
-    top: 332px;
+    width: 39%;
+    height: 336px;
+    left: 36%;
+    top: 426px;
 
 background: url(${solarPanelImg});
 border-radius: 17px;
@@ -117,18 +114,22 @@ border-radius: 17px;
 `
 
 const TextField = styled.div`
-    position: absolute;
-    width: 47%;
-    top: 142px;
-    left: 23%;
-    height: 156px;
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 20px;
+position: absolute;
+width: 40%;
+height: 180px;
+left: 11%;
+top: 200.65px;
 
 `
 const Title = styled.div`
 
 width: 100%;
 font-family: 'Inter';
-margin-bottom: 9px;
 font-style: normal;
 font-weight: 700;
 font-size: 60px;
@@ -140,7 +141,7 @@ flex-grow: 0;
 `
 const Text =styled.div`
 
-width: 75%;
+width: 97%;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 400;

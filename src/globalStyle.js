@@ -32,19 +32,6 @@ const GlobalStyle = createGlobalStyle`
   
   }
  
-
-  #react-lobby-remote-root {
-    z-index: 10000;
-    display: none;
-    position: absolute;
-    width: 90%;
-    height: 90%;
-    margin: auto;
-    position: absolute;
-    top: 50%;  /* position child element vertically in the middle */
-    left: 50%;  /* position child element horizontally in the middle */
-    transform: translate(-50%, -50%);
-} 
 `;
 
 export const ContentWrapper = styled.div`
