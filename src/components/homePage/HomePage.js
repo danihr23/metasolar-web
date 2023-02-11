@@ -5,7 +5,9 @@ import mediaIcon from '../assets/mediaIcon.png';
 import twitterIcon from '../assets/twitterIcon.png';
 import solarPanelImg from '../assets/solarPanelImg.png';
 import { CountdownMonths } from '../countDownTimer/CountdownTimer';
-
+import SolarNFT from '../solarNFT/SolarNFT';
+import BuySolarInfo from '../buySolar/BuySolarInfo';
+import HomePageAbout from '../about/HomePageAbout';
 const HomePage=()=> {
 
 
@@ -33,6 +35,9 @@ const HomePage=()=> {
             sed tempus esfinibus urna,sed tempus es.</Text>
      </TextField>
      <CountdownMonths/>
+     <SolarNFT/>
+     <BuySolarInfo/>
+     <HomePageAbout/>
      </HomePageWrapper>
   )
 }
@@ -44,12 +49,13 @@ height:100%;
 position:relative ;
 `
 const Logo = styled.div`
-width:144px;
-height:28px ;
+width:143px;
+height:27px ;
 position:absolute ;
 left:43px ;
 top:40px ;
-background-image: url(${logo}) ;
+background: transparent url(${logo}) top center no-repeat;
+  background-size: contain;
 `
 const NavWrapper = styled.div`
 width:53% ;
@@ -99,7 +105,8 @@ justify-content: center;
 const MediaIcon=styled.div`
 width:24px ;
 height:19px ;
-background-image: url(${props => props.background}) ;
+background: transparent url(${props => props.background}) top center no-repeat;
+  background-size: contain;
 `
 const SolarPanelImg = styled.div`
         position: absolute;
@@ -108,7 +115,8 @@ const SolarPanelImg = styled.div`
     left: 36%;
     top: 426px;
 
-background: url(${solarPanelImg});
+    background: transparent url(${solarPanelImg}) top center no-repeat;
+  background-size: contain;
 border-radius: 17px;
 
 `
