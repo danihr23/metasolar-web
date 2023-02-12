@@ -1,8 +1,5 @@
 import React from 'react'
 import styled from 'styled-components/macro';
-import logo from '../assets/logo.png';
-import mediaIcon from '../assets/mediaIcon.png';
-import twitterIcon from '../assets/twitterIcon.png';
 import solarPanelImg from '../assets/solarPanelImg.png';
 import { CountdownMonths } from '../countDownTimer/CountdownTimer';
 import SolarNFT from '../solarNFT/SolarNFT';
@@ -13,19 +10,7 @@ const HomePage=()=> {
 
   return (
     <HomePageWrapper>
-        <Logo/>
     <NavWrapper>
-        <Navigation>
-            <NavTool>About</NavTool>
-            <NavTool>Gallery</NavTool>
-            <NavTool>Roadmap</NavTool>
-            <NavTool>FAQ</NavTool>
-            <NavTool>Whitepaper</NavTool>
-            <Button>WALLET</Button>
-            <MediaIcon background={mediaIcon}/>
-            <MediaIcon background={twitterIcon}/>
-        </Navigation>
-   
      </NavWrapper>
      <SolarPanelImg/>
      <TextField>
@@ -48,15 +33,8 @@ width:100%;
 height:100%;
 position:relative ;
 `
-const Logo = styled.div`
-width:143px;
-height:27px ;
-position:absolute ;
-left:43px ;
-top:40px ;
-background: transparent url(${logo}) top center no-repeat;
-  background-size: contain;
-`
+
+
 const NavWrapper = styled.div`
 width:53% ;
 height:708px ;
@@ -66,48 +44,8 @@ display:flex ;
 justify-content:center ;
 background-color:#F1F7FD ;
 `
-const Navigation = styled.div`
-    width: 85%;
-    height: 11%;
-    position: absolute;
-    display: flex;
-    top: 21px;
-    align-items: center;
-    justify-content: space-around
-
-`
-const NavTool = styled.div`
-width: auto;
-height: 17px;
-color: #000000;
-font-family: 'Inter', sans-serif;
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-line-height: 17px;
 
 
-`
-const Button = styled.div`
-width: 70px;
-height: 26px;
-box-sizing: border-box;
-color: #3A712D;
-background: #FCFEFF;
-border: 1px solid #3A712D;
-border-radius: 4.30769px;
-font-size: 10px;
-display: flex;
-align-items: center;
-justify-content: center;
-
-`
-const MediaIcon=styled.div`
-width:24px ;
-height:19px ;
-background: transparent url(${props => props.background}) top center no-repeat;
-  background-size: contain;
-`
 const SolarPanelImg = styled.div`
         position: absolute;
     width: 39%;
