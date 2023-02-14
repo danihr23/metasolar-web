@@ -5,6 +5,7 @@ import styled from 'styled-components/macro';
 const targetTime = moment("2023-05-01");
 
 export const CountdownMonths = () => {
+  
   const [currentTime, setCurrentTime] = useState(moment());
   const timeBetween = moment.duration(targetTime.diff(currentTime));
 

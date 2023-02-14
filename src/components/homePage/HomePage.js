@@ -5,13 +5,14 @@ import { CountdownMonths } from '../countDownTimer/CountdownTimer';
 import SolarNFT from '../solarNFT/SolarNFT';
 import BuySolarInfo from '../buySolar/BuySolarInfo';
 import HomePageAbout from '../about/HomePageAbout';
+import GalleryNFT from '../gallery/GalleryNFT';
+import HomePageGallery from '../gallery/HomePageGallery';
 const HomePage=()=> {
 
 
   return (
     <HomePageWrapper>
-    <NavWrapper>
-     </NavWrapper>
+    <NavWrapper/>
      <SolarPanelImg/>
      <TextField>
         <Title>Ticket to the sun</Title>
@@ -23,6 +24,8 @@ const HomePage=()=> {
      <SolarNFT/>
      <BuySolarInfo/>
      <HomePageAbout/>
+     <HomePageGallery/>
+     <GalleryNFT/>
      </HomePageWrapper>
   )
 }

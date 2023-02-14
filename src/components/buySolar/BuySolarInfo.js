@@ -8,13 +8,13 @@ const  BuySolarInfo=() =>{
               <Titile>Why you should buy an NFT</Titile>
             <NFTWrapper>
           
-            {buySolarData.map((item, index) =>  
-            <InfoWrapper key={index}>
+            {buySolarData.map((item, index) =>  {
+         return   <InfoWrapper key={index}>
                                 <Logo  background={item.image}/>
                                 <DataTitle>{item.title}</DataTitle>
                                 <DataPower>{item.power}</DataPower>
                 </InfoWrapper>
-                               )
+ } )
             
         }
         </NFTWrapper>

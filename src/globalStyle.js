@@ -2,7 +2,7 @@ import styled, { createGlobalStyle } from 'styled-components/macro';
 
 
 const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;500&display=swap');
+
   html {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     height: 100%;

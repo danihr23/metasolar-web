@@ -7,13 +7,13 @@ const SolarNFT=()=>{
     <Wrapper>
         <NFTWrapper>
         <Titile>MetaSolar NFTs saves you</Titile>
-        {metaSolarNft.map((item, index) =>  
-        <InfoWrapper key={index}>
+        {metaSolarNft.map((item, index) =>  {
+      return  <InfoWrapper key={index}>
                             <Logo  background={item.image}/>
                             <DataTitle>{item.title}</DataTitle>
                             <DataPower>{item.power}</DataPower>
             </InfoWrapper>
-                           )
+ } )
         
     }
     </NFTWrapper>
