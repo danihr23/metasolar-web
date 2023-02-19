@@ -7,6 +7,7 @@ import BuySolarInfo from "../buySolar/BuySolarInfo";
 import HomePageAbout from "../about/HomePageAbout";
 import GalleryNFT from "../gallery/GalleryNFT";
 import HomePageGallery from "../gallery/HomePageGallery";
+import BuyNft from "../buyNFT/BuyNft";
 const HomePage = () => {
   return (
     <HomePageWrapper>
@@ -19,12 +20,14 @@ const HomePage = () => {
           Pellentesque a finibus urna, sed tempus esfinibus urna,sed tempus es.
         </Text>
       </TextField>
+      <BuyNft/>
       <CountdownMonths />
       <SolarNFT />
       <BuySolarInfo />
       <HomePageAbout />
       <HomePageGallery />
       <GalleryNFT />
+      <Roadmap>Roadmap</Roadmap>
     </HomePageWrapper>
   );
 };
@@ -93,4 +96,18 @@ const Text = styled.div`
   flex: none;
   order: 1;
   flex-grow: 0;
+`;
+const Roadmap = styled.div`
+  position: absolute;
+  width: 37%;
+  height: 7%;
+  left: 32%;
+  top: 2249px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  color: #283447;
 `;

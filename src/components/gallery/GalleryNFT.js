@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-const nft = Array.from({ length: 315 }, (_, i) => i + 1);
+const nft = Array.from({ length: 310 }, (_, i) => i + 1);
 const GalleryNFT = () => {
   const createNFTimg = () => {
     const resultsRender = [];
