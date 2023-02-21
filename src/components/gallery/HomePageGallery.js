@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-const HomePageGallery = () => {
+const HomePageGallery = ({ onClick }) => {
   return (
     <Wrapper>
       <Title>Gallery</Title>
@@ -11,11 +11,16 @@ const HomePageGallery = () => {
         arcu, ac ultrices urna metus vitae ipsum.
       </Text>
       <ButtonWrapper>
-        <Button borderRadius={"7.2381px"} background={" #FF9920"}>
+        <Button
+          borderRadius={"7.2381px"}
+          background={" #FF9920"}
+          onClick={onClick}
+        >
           <Primery fontSize={"14px"} lineHeight="16px" color="#FFFFFF">
             Buy
           </Primery>
         </Button>
+
         <Button
           borderRadius={"6.54875px"}
           background={" #FFFFFF"}
@@ -63,7 +68,6 @@ const Title = styled.div`
 const Text = styled.div`
   width: 100%;
   height: 18%;
-
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
@@ -87,6 +91,7 @@ const ButtonWrapper = styled.div`
 
 const Button = styled.div`
   box-sizing: border-box;
+
   position: relative;
   width: 48%;
   height: 90%;
@@ -107,8 +112,7 @@ const Primery = styled.div`
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
-  /* identical to box height */
-
+  color: ${(props) => props.color};
   text-align: center;
   text-transform: uppercase;
 `;

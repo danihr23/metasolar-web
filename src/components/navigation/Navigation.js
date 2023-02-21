@@ -3,10 +3,11 @@ import styled from "styled-components/macro";
 import logo from "../assets/logo.png";
 import mediaIcon from "../assets/mediaIcon.png";
 import twitterIcon from "../assets/twitterIcon.png";
+import { Link  } from "react-router-dom";
 const Navigation = () => {
   return (
     <Wrapper>
-      <Logo />
+      <Logo to={'/'}/>
       <Menu>
         <NavTool>About</NavTool>
         <NavTool>Gallery</NavTool>
@@ -34,12 +35,12 @@ const Wrapper = styled.div`
   top: 40px;
 `;
 
-const Logo = styled.div`
-  width: 12%;
+const Logo = styled(Link)`
+width: 12%;
   height: 27px;
   position: relative;
   left: 43px;
-
+  z-index:2 ;
   background: transparent url(${logo}) top center no-repeat;
   background-size: contain;
 `;
@@ -51,7 +52,8 @@ const Menu = styled.div`
   justify-content: space-around;
   z-index: 2;
 `;
-const NavTool = styled.div`
+const NavTool = styled(Link)`
+  text-decoration: none;
   width: auto;
   height: 17px;
   color: #000000;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components/macro";
 import solarPanelImg from "../assets/solarPanelImg.png";
 import { CountdownMonths } from "../countDownTimer/CountdownTimer";
@@ -8,7 +8,20 @@ import HomePageAbout from "../about/HomePageAbout";
 import GalleryNFT from "../gallery/GalleryNFT";
 import HomePageGallery from "../gallery/HomePageGallery";
 import BuyNft from "../buyNFT/BuyNft";
+
 const HomePage = () => {
+  const myRef = useRef(null);
+
+  const onClickBuy = () => {
+    console.log(3333);
+    if (myRef.current) {
+      window.scrollTo({
+        top: myRef.current.offsetTop,
+        behavior: "smooth",
+      });
+    }
+  };
+
   return (
     <HomePageWrapper>
       <NavWrapper />
@@ -20,12 +33,12 @@ const HomePage = () => {
           Pellentesque a finibus urna, sed tempus esfinibus urna,sed tempus es.
         </Text>
       </TextField>
-      <BuyNft/>
+      <BuyNft myRef={myRef} />
       <CountdownMonths />
       <SolarNFT />
       <BuySolarInfo />
       <HomePageAbout />
-      <HomePageGallery />
+      <HomePageGallery onClick={onClickBuy} />
       <GalleryNFT />
       <Roadmap>Roadmap</Roadmap>
     </HomePageWrapper>

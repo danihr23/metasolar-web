@@ -52,7 +52,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 303px;
   top: 1500px;
-
+  overflow:auto ;
   @media (max-width: 1100px) {
     grid-template-columns: auto auto auto;
   }
