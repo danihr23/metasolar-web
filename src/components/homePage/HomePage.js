@@ -8,12 +8,13 @@ import HomePageAbout from "../about/HomePageAbout";
 import GalleryNFT from "../gallery/GalleryNFT";
 import HomePageGallery from "../gallery/HomePageGallery";
 import BuyNft from "../buyNFT/BuyNft";
-
+import RoadmapComponent from "../roadmap/RoadmapComponent";
+import { FAQ } from "../homepageStore/homePageStore";
+import FAQComponent from "../FAQ/FAQComponent";
 const HomePage = () => {
   const myRef = useRef(null);
 
   const onClickBuy = () => {
-    console.log(3333);
     if (myRef.current) {
       window.scrollTo({
         top: myRef.current.offsetTop,
@@ -41,6 +42,12 @@ const HomePage = () => {
       <HomePageGallery onClick={onClickBuy} />
       <GalleryNFT />
       <Roadmap>Roadmap</Roadmap>
+      <RoadmapComponent />
+      <FaqWrapper>
+        {FAQ.map((item, index) => {
+          return <FAQComponent index={index} item={item} />;
+        })}
+      </FaqWrapper>
     </HomePageWrapper>
   );
 };
@@ -123,4 +130,17 @@ const Roadmap = styled.div`
   line-height: 39px;
   text-align: center;
   color: #283447;
+`;
+const FaqWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 10px;
+
+  position: absolute;
+  width: 781px;
+  height: 418px;
+  left: 249px;
+  top: 2905.17px;
 `;

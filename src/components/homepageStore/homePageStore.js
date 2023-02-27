@@ -16,3 +16,40 @@ export const buySolarData = [
   { title: "CO2 Emissions Saved", image: co2, power: "110.63 t" },
   { title: "Annual Energy Production", image: tree, power: "235.37 MkW" },
 ];
+
+export const roadmapData = [
+  {
+    title: "Roadmap title",
+    data: "Ut et sodales mauris, in mollis magna. Maecenas dignissim vulputate tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    title: "Roadmap title",
+    data: "Ut et sodales mauris, in mollis magna. Maecenas dignissim vulputate tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    title: "Roadmap title",
+    data: "Ut et sodales mauris, in mollis magna. Maecenas dignissim vulputate tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    title: "Roadmap title",
+    data: "Ut et sodales mauris, in mollis magna. Maecenas dignissim vulputate tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+];
+export const FAQ = [
+  {
+    title: "Whati is NFT",
+    data: "Ut et sodales mauris, in mollis magna. Maecenas dignissim vulputate tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    title: "Whati is NFT",
+    data: "Ut et sodales mauris, in mollis magna. Maecenas dignissim vulputate tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    title: "Whati is NFT",
+    data: "Ut et sodales mauris, in mollis magna. Maecenas dignissim vulputate tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    title: "Whati is NFT",
+    data: "Ut et sodales mauris, in mollis magna. Maecenas dignissim vulputate tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+];
