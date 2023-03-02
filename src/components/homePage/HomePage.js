@@ -11,20 +11,17 @@ import BuyNft from "../buyNFT/BuyNft";
 import RoadmapComponent from "../roadmap/RoadmapComponent";
 import { FAQ } from "../homepageStore/homePageStore";
 import FAQComponent from "../FAQ/FAQComponent";
-const HomePage = () => {
+import {scroll} from '../hook/scrollHook'
+const HomePage = ({roadmapRef}) => {
   const myRef = useRef(null);
 
   const onClickBuy = () => {
-    if (myRef.current) {
-      window.scrollTo({
-        top: myRef.current.offsetTop,
-        behavior: "smooth",
-      });
-    }
+    console.log(55,myRef.current);
+    scroll(myRef);
   };
 
   return (
-    <HomePageWrapper>
+    <HomePageWrapper >
       <NavWrapper />
       <SolarPanelImg />
       <TextField>
@@ -42,16 +39,21 @@ const HomePage = () => {
       <HomePageGallery onClick={onClickBuy} />
       <GalleryNFT />
       <Roadmap>Roadmap</Roadmap>
-      <RoadmapComponent />
+      <RoadmapComponent roadmapRef={roadmapRef}/>
+      <WrapperFAQ>
       <FaqWrapper>
         {FAQ.map((item, index) => {
           return <FAQComponent index={index} item={item} />;
         })}
       </FaqWrapper>
+      </WrapperFAQ>
     </HomePageWrapper>
   );
 };
 export default HomePage;
+
+
+
 
 const HomePageWrapper = styled.div`
   width: 100%;
@@ -131,6 +133,20 @@ const Roadmap = styled.div`
   text-align: center;
   color: #283447;
 `;
+
+const WrapperFAQ= styled.div`
+display: flex;
+    position: absolute;
+    width: 1280px;
+    height: 500px;
+   
+    top: 2864.17px;
+    background: #F3F8FC;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+`
 const FaqWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -141,6 +157,5 @@ const FaqWrapper = styled.div`
   position: absolute;
   width: 781px;
   height: 418px;
-  left: 249px;
-  top: 2905.17px;
+
 `;

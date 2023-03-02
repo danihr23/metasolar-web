@@ -3,16 +3,23 @@ import styled from "styled-components/macro";
 import logo from "../assets/logo.png";
 import mediaIcon from "../assets/mediaIcon.png";
 import twitterIcon from "../assets/twitterIcon.png";
-import { Link  } from "react-router-dom";
+import { Link } from "react-router-dom";
+import {scrollByPosition} from '../hook/scrollHook'
 const Navigation = () => {
+
   return (
     <Wrapper>
-      <Logo to={'/'}/>
+      <Logo to={"/"} />
       <Menu>
         <NavTool>About</NavTool>
         <NavTool>Gallery</NavTool>
-        <NavTool>Roadmap</NavTool>
-        <NavTool>FAQ</NavTool>
+        <NavTool
+          onClick={()=> scrollByPosition(2200)}>
+          Roadmap
+        </NavTool>
+        <NavTool onClick={()=> scrollByPosition(2800)}>
+          FAQ
+        </NavTool>
         <NavTool>Whitepaper</NavTool>
         <Button>WALLET</Button>
         <MediaIcon background={mediaIcon} />
@@ -36,11 +43,11 @@ const Wrapper = styled.div`
 `;
 
 const Logo = styled(Link)`
-width: 12%;
+  width: 12%;
   height: 27px;
   position: relative;
   left: 43px;
-  z-index:2 ;
+  z-index: 2;
   background: transparent url(${logo}) top center no-repeat;
   background-size: contain;
 `;

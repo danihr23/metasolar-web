@@ -87,7 +87,7 @@ const Text = styled.div`
           margin: -1px 0px;
           height: 100%;
           position: relative;
-          transition: 0.4;
+          transition: 0.4s;
         `
       : css`
 

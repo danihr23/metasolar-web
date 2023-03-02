@@ -25,7 +25,7 @@ export default function BuyNft({ myRef }) {
 
 const totalPrice = totalNft * 0.01;
 
-  console.log(11,totalNft);
+
   return (
     <Wrapper ref={myRef}>
       <Title>Get your MetaSolar NFT</Title>
