@@ -10,9 +10,9 @@ export default function FAQComponent({ index, item, }) {
         setIsOpen(!isOpen)
     };
   
-console.log(222,isOpen);
+
   return (
-    <Wrapper>
+    <Wrapper key={index}>
       <InnerWrapper>
         <Content>
           <Title>{item.title}</Title>

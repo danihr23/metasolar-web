@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import BuyButton from "../buttons/BuyButton";
 
 const HomePageGallery = ({ onClick }) => {
   return (
@@ -11,25 +12,30 @@ const HomePageGallery = ({ onClick }) => {
         arcu, ac ultrices urna metus vitae ipsum.
       </Text>
       <ButtonWrapper>
-        <Button
-          borderRadius={"7.2381px"}
-          background={" #FF9920"}
+        
+        <BuyButton
           onClick={onClick}
-        >
-          <Primery fontSize={"14px"} lineHeight="16px" color="#FFFFFF">
-            Buy
-          </Primery>
-        </Button>
+          btnPosition={'relative'}
+          btnBorderRadius={"7.2381px"}
+          btnBackground={" #FF9920"}
+          btnText={"Buy"}
+          primeryFontSize={"14px"}
+          primeryLineHeight={"16px"}
+          primeryColor={"#FFFFFF"}
+        />
 
-        <Button
-          borderRadius={"6.54875px"}
-          background={" #FFFFFF"}
-          border={"0.904762px solid #3A712D"}
-        >
-          <Primery fontSize="12.6667px;" lineHeight="15px" color="#3A712D">
-            Check your nfts
-          </Primery>
-        </Button>
+        <BuyButton
+           btnPosition={'relative'}
+         btnBorderRadius={"6.54875px"}
+          btnBackground={" #FFFFFF"}
+          btnText={"Check your nfts"}
+          bntBorder={"0.904762px solid #3A712D"}
+          primeryFontSize={"13px"}
+          primeryLineHeight={"15px"}
+          primeryColor={"#3A712D"}
+        />
+
+       
       </ButtonWrapper>
     </Wrapper>
   );
@@ -89,30 +95,3 @@ const ButtonWrapper = styled.div`
   height: 20%;
 `;
 
-const Button = styled.div`
-  box-sizing: border-box;
-
-  position: relative;
-  width: 48%;
-  height: 90%;
-  background: ${(props) => props.background};
-  border: ${(props) => props.border};
-  border-radius: ${(props) => props.borderRadius};
-`;
-
-const Primery = styled.div`
-  position: absolute;
-  left: 5%;
-  right: 5%;
-  top: 31.25%;
-  bottom: 29.61%;
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  color: ${(props) => props.color};
-  text-align: center;
-  text-transform: uppercase;
-`;

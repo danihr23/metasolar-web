@@ -11,17 +11,18 @@ import BuyNft from "../buyNFT/BuyNft";
 import RoadmapComponent from "../roadmap/RoadmapComponent";
 import { FAQ } from "../homepageStore/homePageStore";
 import FAQComponent from "../FAQ/FAQComponent";
-import {scroll} from '../hook/scrollHook'
-const HomePage = ({roadmapRef}) => {
+import { scroll } from "../hook/scrollHook";
+import BuyButton from "../buttons/BuyButton";
+const HomePage = ({ roadmapRef }) => {
   const myRef = useRef(null);
 
   const onClickBuy = () => {
-    console.log(55,myRef.current);
+    console.log(55, myRef.current);
     scroll(myRef);
   };
 
   return (
-    <HomePageWrapper >
+    <HomePageWrapper>
       <NavWrapper />
       <SolarPanelImg />
       <TextField>
@@ -39,21 +40,34 @@ const HomePage = ({roadmapRef}) => {
       <HomePageGallery onClick={onClickBuy} />
       <GalleryNFT />
       <Roadmap>Roadmap</Roadmap>
-      <RoadmapComponent roadmapRef={roadmapRef}/>
+      <RoadmapComponent roadmapRef={roadmapRef} />
       <WrapperFAQ>
-      <FaqWrapper>
-        {FAQ.map((item, index) => {
-          return <FAQComponent index={index} item={item} />;
-        })}
-      </FaqWrapper>
+        <FaqTittle>FAQ</FaqTittle>
+        <FaqWrapper>
+          {FAQ.map((item, index) => {
+            return <FAQComponent key={index} index={index} item={item} />;
+          })}
+        </FaqWrapper>
       </WrapperFAQ>
+      <BuyButton
+         btnPosition={'absolute'}
+         btnZindex={'2'}
+         bntTop={'550%'}
+         btnLeft={'44%'}
+         btnHeight={'6%'}
+         btnWidth={'11%'}
+          onClick={onClickBuy}
+          btnBorderRadius={"7.2381px"}
+          btnBackground={" #FF9920"}
+          btnText={"Buy"}
+          primeryFontSize={"14px"}
+          primeryLineHeight={"16px"}
+          primeryColor={"#FFFFFF"}
+        />
     </HomePageWrapper>
   );
 };
 export default HomePage;
-
-
-
 
 const HomePageWrapper = styled.div`
   width: 100%;
@@ -134,19 +148,33 @@ const Roadmap = styled.div`
   color: #283447;
 `;
 
-const WrapperFAQ= styled.div`
-display: flex;
-    position: absolute;
-    width: 1280px;
-    height: 500px;
-   
-    top: 2864.17px;
-    background: #F3F8FC;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+const WrapperFAQ = styled.div`
+  display: flex;
+  position: absolute;
+  gap: 30px;
+  width: 100%;
+    height: 89%;
+  flex-direction: column;
+  top: 2864.17px;
+  background: #f3f8fc;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+`;
 
-`
+const FaqTittle = styled.div`
+
+  width: 30%;
+  height: 8%;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-align: center;
+  color: #283447;
+`;
 const FaqWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -154,8 +182,7 @@ const FaqWrapper = styled.div`
   padding: 10px;
   gap: 10px;
 
-  position: absolute;
+  position: relative;
   width: 781px;
   height: 418px;
-
 `;

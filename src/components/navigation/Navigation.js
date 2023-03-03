@@ -5,11 +5,11 @@ import mediaIcon from "../assets/mediaIcon.png";
 import twitterIcon from "../assets/twitterIcon.png";
 import { Link } from "react-router-dom";
 import {scrollByPosition} from '../hook/scrollHook'
-const Navigation = () => {
+const Navigation = ({flexDirection,height,isWallet,isCompany,logoleft}) => {
 
   return (
-    <Wrapper>
-      <Logo to={"/"} />
+    <Wrapper flexDirection={flexDirection} height={height}>
+      <Logo to={"/"} logoLeft={logoleft}/>
       <Menu>
         <NavTool>About</NavTool>
         <NavTool>Gallery</NavTool>
@@ -21,10 +21,12 @@ const Navigation = () => {
           FAQ
         </NavTool>
         <NavTool>Whitepaper</NavTool>
-        <Button>WALLET</Button>
+        {isWallet &&   <Button>WALLET</Button>}
+       
         <MediaIcon background={mediaIcon} />
         <MediaIcon background={twitterIcon} />
       </Menu>
+      {isCompany && <div>© 2022 Metasolar. All rights reserved</div>}
     </Wrapper>
   );
 };
@@ -36,8 +38,9 @@ const Wrapper = styled.div`
   align-items: center;
   align-content: center;
   justify-content: space-between;
+  flex-direction:${(props) => props.flexDirection && props.flexDirection}; 
   width: 94%;
-  height: 45.85px;
+  height: ${(props) => props.height ? props.height : '5%'};
   left: 3%;
   top: 40px;
 `;
@@ -46,7 +49,8 @@ const Logo = styled(Link)`
   width: 12%;
   height: 27px;
   position: relative;
-  left: 43px;
+
+  left: ${(props) => props.logoleft && props.logoleft}; 
   z-index: 2;
   background: transparent url(${logo}) top center no-repeat;
   background-size: contain;
