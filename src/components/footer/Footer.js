@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
-import BuyButton from "../buttons/BuyButton";
+
 import Navigation from "../navigation/Navigation";
 
 export default function Footer() {
@@ -13,11 +13,10 @@ export default function Footer() {
             Ut et sodales mauris, in mollis magna. Maecenas dignissim vulputate
             tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Í
           </Text>
-         
         </InnerFrame>
       </GreenWrapper>
       <BlackWrapper>
-        <Navigation isCompany={true} height={'70%'} flexDirection={'column'} />
+        <Navigation isCompany={true} height={"70%"} flexDirection={"column"}  color={'#FFFFFF'} footer={true}/>
       </BlackWrapper>
     </Wrapper>
   );
@@ -55,13 +54,13 @@ const InnerFrame = styled.div`
 
   position: absolute;
   width: 60%;
- 
+
   left: 250px;
   top: 59px;
 `;
 const Title = styled.div`
-width: 72%;
-    height: 26%;
+  width: 72%;
+  height: 26%;
 
   font-family: "Inter";
   font-style: normal;
@@ -77,8 +76,8 @@ width: 72%;
   color: #283447;
 `;
 const Text = styled.div`
-    width: 100%;
-    height: 35%;
+  width: 100%;
+  height: 35%;
 
   font-family: "Inter";
   font-style: normal;
@@ -91,15 +90,13 @@ const Text = styled.div`
   color: #0f1d32;
 `;
 const BlackWrapper = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 209px;
 
-position: absolute;
-width: 100%;
-height: 209px;
+  top: 285px;
 
-top: 285px;
+  /* title colour */
 
-/* title colour */
-
-background: #283447;
-
-`
+  background: #283447;
+`;

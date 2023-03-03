@@ -3,30 +3,40 @@ import styled from "styled-components/macro";
 import logo from "../assets/logo.png";
 import mediaIcon from "../assets/mediaIcon.png";
 import twitterIcon from "../assets/twitterIcon.png";
-import { Link } from "react-router-dom";
-import {scrollByPosition} from '../hook/scrollHook'
-const Navigation = ({flexDirection,height,isWallet,isCompany,logoleft}) => {
+import whiteTwitter from "../assets/whiteTwitter.png";
+import whiteIcon from "../assets/whiteicon.png";
+import logoWhite from "../assets/logoWhite.png";
 
+import { Link } from "react-router-dom";
+import { scrollByPosition } from "../hook/scrollHook";
+const Navigation = ({
+  flexDirection,
+  height,
+  isWallet,
+  isCompany,
+  logoleft,
+  color,
+  footer,
+}) => {
   return (
     <Wrapper flexDirection={flexDirection} height={height}>
-      <Logo to={"/"} logoLeft={logoleft}/>
+      <Logo logoleft={logoleft} to={"/"} iswhite={footer} />
       <Menu>
-        <NavTool>About</NavTool>
-        <NavTool>Gallery</NavTool>
-        <NavTool
-          onClick={()=> scrollByPosition(2200)}>
+        <NavTool color={color}>About</NavTool>
+        <NavTool color={color}>Gallery</NavTool>
+        <NavTool onClick={() => scrollByPosition(2200)} color={color}>
           Roadmap
         </NavTool>
-        <NavTool onClick={()=> scrollByPosition(2800)}>
+        <NavTool onClick={() => scrollByPosition(2800)} color={color}>
           FAQ
         </NavTool>
-        <NavTool>Whitepaper</NavTool>
-        {isWallet &&   <Button>WALLET</Button>}
-       
-        <MediaIcon background={mediaIcon} />
-        <MediaIcon background={twitterIcon} />
+        <NavTool color={color}>Whitepaper</NavTool>
+        {isWallet && <Button>WALLET</Button>}
+
+        <MediaIcon background={footer ? whiteIcon : mediaIcon}  />
+        <MediaIcon background={footer ? whiteTwitter : twitterIcon} to={'https://twitter.com/?lang=en'}/>
       </Menu>
-      {isCompany && <div>© 2022 Metasolar. All rights reserved</div>}
+      {isCompany && <div style=  {{color: '#7E91B0'}} >© 2022 Metasolar. All rights reserved</div>}
     </Wrapper>
   );
 };
@@ -38,9 +48,9 @@ const Wrapper = styled.div`
   align-items: center;
   align-content: center;
   justify-content: space-between;
-  flex-direction:${(props) => props.flexDirection && props.flexDirection}; 
+  flex-direction: ${(props) => props.flexDirection && props.flexDirection};
   width: 94%;
-  height: ${(props) => props.height ? props.height : '5%'};
+  height: ${(props) => (props.height ? props.height : "5%")};
   left: 3%;
   top: 40px;
 `;
@@ -50,9 +60,10 @@ const Logo = styled(Link)`
   height: 27px;
   position: relative;
 
-  left: ${(props) => props.logoleft && props.logoleft}; 
+  left: ${(props) => props.logoleft && props.logoleft};
   z-index: 2;
-  background: transparent url(${logo}) top center no-repeat;
+  background: transparent url(${(props) => (props.iswhite ? logoWhite : logo)})
+    top center no-repeat;
   background-size: contain;
 `;
 const Menu = styled.div`
@@ -67,7 +78,7 @@ const NavTool = styled(Link)`
   text-decoration: none;
   width: auto;
   height: 17px;
-  color: #000000;
+  color: ${(props) => (props.color ? props.color : " #000000")};
   font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 600;
@@ -87,9 +98,10 @@ const Button = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const MediaIcon = styled.div`
+const MediaIcon = styled(Link)`
   width: 24px;
   height: 19px;
+
   background: transparent url(${(props) => props.background}) top center
     no-repeat;
   background-size: contain;
