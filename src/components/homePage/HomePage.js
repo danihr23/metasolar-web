@@ -12,7 +12,8 @@ import RoadmapComponent from "../roadmap/RoadmapComponent";
 import { FAQ } from "../homepageStore/homePageStore";
 import FAQComponent from "../FAQ/FAQComponent";
 import { scroll } from "../hook/scrollHook";
-import BuyButton from "../buttons/BuyButton";
+import Footer from "../footer/Footer";
+
 const HomePage = ({ roadmapRef }) => {
   const myRef = useRef(null);
 
@@ -37,8 +38,8 @@ const HomePage = ({ roadmapRef }) => {
       <SolarNFT />
       <BuySolarInfo />
       <HomePageAbout />
-      <HomePageGallery onClick={onClickBuy} />
-      <GalleryNFT />
+      <HomePageGallery onClick={onClickBuy} height="37%" bottom="-184%" width="62%"/>
+      <GalleryNFT nftCount={320} top={'1500px'} overflow='auto' />
       <Roadmap>Roadmap</Roadmap>
       <RoadmapComponent roadmapRef={roadmapRef} />
       <WrapperFAQ>
@@ -49,21 +50,7 @@ const HomePage = ({ roadmapRef }) => {
           })}
         </FaqWrapper>
       </WrapperFAQ>
-      <BuyButton
-         btnPosition={'absolute'}
-         btnZindex={'2'}
-         bntTop={'550%'}
-         btnLeft={'44%'}
-         btnHeight={'6%'}
-         btnWidth={'11%'}
-          onClick={onClickBuy}
-          btnBorderRadius={"7.2381px"}
-          btnBackground={" #FF9920"}
-          btnText={"Buy"}
-          primeryFontSize={"14px"}
-          primeryLineHeight={"16px"}
-          primeryColor={"#FFFFFF"}
-        />
+     <Footer top={'3403px'} onClickBuy={onClickBuy} />
     </HomePageWrapper>
   );
 };

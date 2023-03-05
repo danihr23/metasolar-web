@@ -1,10 +1,14 @@
 import React from "react";
 import styled from "styled-components/macro";
 import BuyButton from "../buttons/BuyButton";
+import { scrollByPosition } from "../hook/scrollHook";
 
-const HomePageGallery = ({ onClick }) => {
+const HomePageGallery = ({ onClick,height,width,bottom }) => {
+  const onClickHandler=()=>{
+    scrollByPosition(10)
+  }
   return (
-    <Wrapper>
+    <Wrapper height={height} width={width} bottom={bottom} >
       <Title>Gallery</Title>
       <Text>
         Below is just a part of the MetaSolar NFT. Click on a panel to buy it.
@@ -14,6 +18,7 @@ const HomePageGallery = ({ onClick }) => {
       <ButtonWrapper>
         
         <BuyButton
+          to={'/'}
           onClick={onClick}
           btnPosition={'relative'}
           btnBorderRadius={"7.2381px"}
@@ -25,6 +30,8 @@ const HomePageGallery = ({ onClick }) => {
         />
 
         <BuyButton
+        to={'/Gallery'}
+        onClick={onClickHandler}
            btnPosition={'relative'}
          btnBorderRadius={"6.54875px"}
           btnBackground={" #FFFFFF"}
@@ -50,10 +57,11 @@ const Wrapper = styled.div`
   gap: 30px;
 
   position: absolute;
-  width: 62%;
+  width: ${(props) => props.width && props.width};
   left: 20%;
-  height: 37%;
-  bottom: -184%;
+  height: ${(props) => props.height && props.height};
+
+  bottom: ${(props) => props.bottom && props.bottom};;
 `;
 
 const Title = styled.div`

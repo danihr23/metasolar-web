@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 export default function BuyButton({
   onClick,
@@ -15,9 +16,11 @@ export default function BuyButton({
   btnWidth,
   btnHeight,
   btnZindex,
+  to
 }) {
   return (
     <Button
+      to={to}
       position={btnPosition}
       borderRadius={btnBorderRadius}
       background={btnBackground}
@@ -39,7 +42,7 @@ export default function BuyButton({
     </Button>
   );
 }
-const Button = styled.div`
+const Button = styled(Link)`
   box-sizing: border-box;
 
   position: ${(props) => props.position};

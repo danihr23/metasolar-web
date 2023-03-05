@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components/macro";
-
+import BuyButton from "../buttons/BuyButton";
 import Navigation from "../navigation/Navigation";
 
-export default function Footer() {
+export default function Footer({top,onClickBuy}) {
   return (
-    <Wrapper>
+    <Wrapper top={top}>
       <GreenWrapper>
         <InnerFrame>
           <Title> From the intangible to the tangible</Title>
@@ -13,6 +13,22 @@ export default function Footer() {
             Ut et sodales mauris, in mollis magna. Maecenas dignissim vulputate
             tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Í
           </Text>
+          <BuyButton
+         btnPosition={'absolute'}
+         btnZindex={'2'}
+         bntTop={'143%'}
+         btnLeft={'44%'}
+         btnHeight={'37%'}
+         btnWidth={'21%'}
+         to={'/'}
+          onClick={onClickBuy}
+          btnBorderRadius={"7.2381px"}
+          btnBackground={" #FF9920"}
+          btnText={"Buy"}
+          primeryFontSize={"14px"}
+          primeryLineHeight={"16px"}
+          primeryColor={"#FFFFFF"}
+        />
         </InnerFrame>
       </GreenWrapper>
       <BlackWrapper>
@@ -25,9 +41,8 @@ export default function Footer() {
 const Wrapper = styled.div`
   position: absolute;
   width: 100%;
-  //height: 494px;
-  //left: 0px;
-  top: 3403.17px;
+  
+  top:${(props) => props.top && props.top};
 
   background: #fcfeff;
 `;

@@ -23,8 +23,8 @@ const Navigation = ({
       <Logo logoleft={logoleft} to={"/"} iswhite={footer} />
       <Menu>
         <NavTool color={color}>About</NavTool>
-        <NavTool color={color}>Gallery</NavTool>
-        <NavTool onClick={() => scrollByPosition(2200)} color={color}>
+        <NavTool to={"/Gallery"} color={color}>Gallery</NavTool>
+        <NavTool to={"/"} onClick={() => scrollByPosition(2200)} color={color}>
           Roadmap
         </NavTool>
         <NavTool onClick={() => scrollByPosition(2800)} color={color}>

@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components/macro";
 
-const nft = Array.from({ length: 310 }, (_, i) => i + 1);
-const GalleryNFT = () => {
+
+const GalleryNFT = ({nftCount,top,overflow}) => {
+  const nft = Array.from({ length: nftCount }, (_, i) => i + 1);
   const createNFTimg = () => {
     const resultsRender = [];
 
@@ -39,7 +40,7 @@ const GalleryNFT = () => {
     return resultsRender;
   };
 
-  return <Wrapper>{createNFTimg()}</Wrapper>;
+  return <Wrapper top={top} overflow={overflow}>{createNFTimg()}</Wrapper>;
 };
 
 export default GalleryNFT;
@@ -51,8 +52,8 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   height: 303px;
-  top: 1500px;
-  overflow:auto ;
+  top: ${(props) => props.top && props.top};
+  overflow:${(props) => props.overflow && props.overflow};
   @media (max-width: 1100px) {
     grid-template-columns: auto auto auto;
   }
