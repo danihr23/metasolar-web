@@ -22,7 +22,7 @@ export default function BuyButton({
     <Button
       to={to}
       position={btnPosition}
-      borderRadius={btnBorderRadius}
+      borderradius={btnBorderRadius}
       background={btnBackground}
       onClick={onClick}
       border={bntBorder}
@@ -30,7 +30,7 @@ export default function BuyButton({
       left={btnLeft}
       width={btnWidth}
       height={btnHeight}
-      zIndex={btnZindex}
+      zindex={btnZindex}
     >
       <Primery
         fontSize={primeryFontSize}
@@ -46,14 +46,14 @@ const Button = styled(Link)`
   box-sizing: border-box;
 
   position: ${(props) => props.position};
-  z-index:${(props) => props.zIndex && props.zIndex};
+  z-index:${(props) => props.zindex && props.zindex};
   top: ${(props) => props.top ? props.top:''};
   left: ${(props) => props.left ? props.left : ''};
   width: ${(props) => props.width ? props.width : '48%'};;
   height: ${(props) => props.height ? props.height : '90%'};;
   background: ${(props) => props.background};
   border: ${(props) => props.border};
-  border-radius: ${(props) => props.borderRadius};
+  border-radius: ${(props) => props.borderradius};
 `;
 
 const Primery = styled.div`

@@ -8,7 +8,7 @@ import whiteIcon from "../assets/whiteicon.png";
 import logoWhite from "../assets/logoWhite.png";
 
 import { Link } from "react-router-dom";
-import { scrollByPosition } from "../hook/scrollHook";
+import { scrollToFaq,scrollToRoadmap } from "../hook/scrollHook";
 const Navigation = ({
   flexDirection,
   height,
@@ -22,12 +22,12 @@ const Navigation = ({
     <Wrapper flexDirection={flexDirection} height={height}>
       <Logo logoleft={logoleft} to={"/"} iswhite={footer} />
       <Menu>
-        <NavTool color={color}>About</NavTool>
+        <NavTool to={"/About"} color={color}>About</NavTool>
         <NavTool to={"/Gallery"} color={color}>Gallery</NavTool>
-        <NavTool to={"/"} onClick={() => scrollByPosition(2200)} color={color}>
+        <NavTool to={"/"} onClick={scrollToRoadmap} color={color}>
           Roadmap
         </NavTool>
-        <NavTool onClick={() => scrollByPosition(2800)} color={color}>
+        <NavTool to={'/'} onClick={scrollToFaq} color={color}>
           FAQ
         </NavTool>
         <NavTool color={color}>Whitepaper</NavTool>

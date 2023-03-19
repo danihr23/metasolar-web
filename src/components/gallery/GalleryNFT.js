@@ -46,14 +46,14 @@ const GalleryNFT = ({nftCount,top,overflow}) => {
 export default GalleryNFT;
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
   justify-content: center;
   align-items: flex-start;
   position: relative;
   width: 100%;
   height: 303px;
   top: ${(props) => props.top && props.top};
-  overflow:${(props) => props.overflow && props.overflow};
+  //overflow:${(props) => props.overflow && props.overflow};
   @media (max-width: 1100px) {
     grid-template-columns: auto auto auto;
   }
@@ -73,7 +73,7 @@ const BoxWrapper = styled.div`
   padding-left: 0;
   justify-items: center;
   align-items: flex-start;
-  padding: 4px;
+  padding: 2px;
   @media (max-width: 1050px) {
     grid-template-columns: auto auto auto;
   }
@@ -91,8 +91,8 @@ const NftBox = styled.div`
 const Vector = styled.div`
   position: relative;
   gap: 3px;
-  width: 12px;
-  height: 65px;
+  width: 2px;
+  height: 8px;
   background: ${(props) => props.background};
   border-top-left-radius: ${(props) => props.index === 0 && "7"}px;
   border-bottom-left-radius: ${(props) => props.index === 0 && "7"}px;

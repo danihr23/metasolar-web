@@ -12,8 +12,8 @@ export default function Gallery() {
   return (
     <Wrapper>
       <HomePageGallery  height="71%" bottom="-32%" width="64%"/>
-    <GalleryNFT nftCount={2350}  top="500px"  />
-    <Footer top={'2800px'} onClickBuy={onClick}/>
+    <GalleryNFT nftCount={50000}  top="414px"  />
+    <Footer top={'3800px'} onClickBuy={onClick}/>
     </Wrapper>
   )
 }

@@ -40,9 +40,9 @@ const HomePage = ({ roadmapRef }) => {
       <HomePageAbout />
       <HomePageGallery onClick={onClickBuy} height="37%" bottom="-184%" width="62%"/>
       <GalleryNFT nftCount={320} top={'1500px'} overflow='auto' />
-      <Roadmap>Roadmap</Roadmap>
+      <Roadmap id="roadmap-section">Roadmap</Roadmap>
       <RoadmapComponent roadmapRef={roadmapRef} />
-      <WrapperFAQ>
+      <WrapperFAQ id="my-section" >
         <FaqTittle>FAQ</FaqTittle>
         <FaqWrapper>
           {FAQ.map((item, index) => {

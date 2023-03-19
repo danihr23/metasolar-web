@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
 const HomePageAbout = () => {
   return (
     <Wrapper>
@@ -13,7 +14,7 @@ const HomePageAbout = () => {
           metus vitae ipsum.
         </Text>
 
-        <Button>
+        <Button to={"/About"}>
           <ButtonText>learn more</ButtonText>
         </Button>
       </ContentWrapper>
@@ -72,7 +73,7 @@ const Text = styled.div`
   color: #0f1d32;
 `;
 
-const Button = styled.div`
+const Button = styled(Link)`
   box-sizing: border-box;
   width: 20%;
   height: 20%;

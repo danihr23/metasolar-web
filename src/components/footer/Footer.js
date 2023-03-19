@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import BuyButton from "../buttons/BuyButton";
 import Navigation from "../navigation/Navigation";
 
-export default function Footer({top,onClickBuy}) {
+export default function Footer({top,onClickBuy,roadmapPosions}) {
   return (
     <Wrapper top={top}>
       <GreenWrapper>
@@ -32,7 +32,7 @@ export default function Footer({top,onClickBuy}) {
         </InnerFrame>
       </GreenWrapper>
       <BlackWrapper>
-        <Navigation isCompany={true} height={"70%"} flexDirection={"column"}  color={'#FFFFFF'} footer={true}/>
+        <Navigation isCompany={true} height={"70%"} flexDirection={"column"}  color={'#FFFFFF'} footer={'true'} />
       </BlackWrapper>
     </Wrapper>
   );
