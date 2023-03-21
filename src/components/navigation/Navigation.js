@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import styled from "styled-components/macro";
 import logo from "../assets/logo.png";
 import mediaIcon from "../assets/mediaIcon.png";
@@ -9,6 +9,10 @@ import logoWhite from "../assets/logoWhite.png";
 
 import { Link } from "react-router-dom";
 import { scrollToFaq,scrollToRoadmap } from "../hook/scrollHook";
+
+import Web3 from "web3";
+/* global ethereum */
+
 const Navigation = ({
   flexDirection,
   height,
@@ -18,7 +22,33 @@ const Navigation = ({
   color,
   footer,
 }) => {
+  const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
+  const [walletLabel, setWalletLabel] = useState("");
+  
+  async function connectWallet() {
+    
+    try {
+      if (typeof window.ethereum !== 'undefined') {
+        // Prompt user to connect wallet
+        await window.ethereum.enable();
+        // Get user account address
+        const accounts = await web3.eth.getAccounts();
+       
+        // Set the wallet button label to the user's account address
+        //setWalletLabel(accounts[0]);
+        const truncatedAddress = accounts[0].substring(0, 8) + "..." 
+        setWalletLabel(truncatedAddress);
+      } else {
+        window.location.href = 'https://metamask.io/download.html';
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  
+  
   return (
+
     <Wrapper flexDirection={flexDirection} height={height}>
       <Logo logoleft={logoleft} to={"/"} iswhite={footer} />
       <Menu>
@@ -31,7 +61,8 @@ const Navigation = ({
           FAQ
         </NavTool>
         <NavTool color={color}>Whitepaper</NavTool>
-        {isWallet && <Button>WALLET</Button>}
+        {isWallet && <Button  onClick={connectWallet}> {walletLabel==='' ? "WALLET" : walletLabel } </Button>}
+           
 
         <MediaIcon background={footer ? whiteIcon : mediaIcon}  />
         <MediaIcon background={footer ? whiteTwitter : twitterIcon} to={'https://twitter.com/?lang=en'}/>
