@@ -6,12 +6,13 @@ import twitterIcon from "../assets/twitterIcon.png";
 import whiteTwitter from "../assets/whiteTwitter.png";
 import whiteIcon from "../assets/whiteicon.png";
 import logoWhite from "../assets/logoWhite.png";
-
+import {  useDispatch,useSelector } from 'react-redux'
+import { setUserAddres } from '../reducers/userWalletAddresReducer'
 import { Link } from "react-router-dom";
 import { scrollToFaq,scrollToRoadmap } from "../hook/scrollHook";
 
 import Web3 from "web3";
-/* global ethereum */
+
 
 const Navigation = ({
   flexDirection,
@@ -22,9 +23,11 @@ const Navigation = ({
   color,
   footer,
 }) => {
+
+  const dispatch= useDispatch();
   const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
   const [walletLabel, setWalletLabel] = useState("");
-  
+  //const count = useSelector((state)=> state.userAddres.value)
   async function connectWallet() {
     
     try {
@@ -36,6 +39,7 @@ const Navigation = ({
        
         // Set the wallet button label to the user's account address
         //setWalletLabel(accounts[0]);
+        dispatch(setUserAddres(accounts[0]))
         const truncatedAddress = accounts[0].substring(0, 8) + "..." 
         setWalletLabel(truncatedAddress);
       } else {
@@ -46,6 +50,7 @@ const Navigation = ({
     }
   }
   
+
   
   return (
 
