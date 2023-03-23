@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 import styled from "styled-components/macro";
 import logo from "../assets/logo.png";
 import mediaIcon from "../assets/mediaIcon.png";
@@ -6,12 +6,11 @@ import twitterIcon from "../assets/twitterIcon.png";
 import whiteTwitter from "../assets/whiteTwitter.png";
 import whiteIcon from "../assets/whiteicon.png";
 import logoWhite from "../assets/logoWhite.png";
-import {  useDispatch,useSelector } from 'react-redux'
-import { setUserAddres } from '../reducers/userWalletAddresReducer'
+import { useSelector } from 'react-redux'
 import { Link } from "react-router-dom";
 import { scrollToFaq,scrollToRoadmap } from "../hook/scrollHook";
+import useTruncatedAddress  from "../hook/useTruncatedAddress";
 
-import Web3 from "web3";
 
 
 const Navigation = ({
@@ -24,34 +23,19 @@ const Navigation = ({
   footer,
 }) => {
 
-  const dispatch= useDispatch();
-  const web3 = new Web3(Web3.givenProvider || "http://localhost:8545");
-  const [walletLabel, setWalletLabel] = useState("");
+ const {connectWallet,  error} = useTruncatedAddress()
+ const [addressNumber, setAddressNumber] = useState(null);
+ const userAddres = useSelector((state)=> state.userAddres.value)
   //const count = useSelector((state)=> state.userAddres.value)
-  async function connectWallet() {
-    
-    try {
-      if (typeof window.ethereum !== 'undefined') {
-        // Prompt user to connect wallet
-        await window.ethereum.enable();
-        // Get user account address
-        const accounts = await web3.eth.getAccounts();
-       
-        // Set the wallet button label to the user's account address
-        //setWalletLabel(accounts[0]);
-        dispatch(setUserAddres(accounts[0]))
-        const truncatedAddress = accounts[0].substring(0, 8) + "..." 
-        setWalletLabel(truncatedAddress);
-      } else {
-        window.location.href = 'https://metamask.io/download.html';
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  }
-  
 
-  
+  const onClickHandler = ()=>{
+      connectWallet()
+  }
+
+  useEffect(()=>{
+    userAddres && setAddressNumber(userAddres)
+  },[userAddres])
+ 
   return (
 
     <Wrapper flexDirection={flexDirection} height={height}>
@@ -66,7 +50,7 @@ const Navigation = ({
           FAQ
         </NavTool>
         <NavTool color={color}>Whitepaper</NavTool>
-        {isWallet && <Button  onClick={connectWallet}> {walletLabel==='' ? "WALLET" : walletLabel } </Button>}
+        {isWallet && <Button  onClick={onClickHandler}> {!addressNumber ? "WALLET" : addressNumber.substring(0, 8) + '...' } </Button>}
            
 
         <MediaIcon background={footer ? whiteIcon : mediaIcon}  />

@@ -2,14 +2,14 @@ import React, { useState } from "react";
 import styled from "styled-components/macro";
 import nft from "../assets/nft.png";
 import { useSelector } from 'react-redux'
-import { buyToken } from "../hook/buyToken";
-import Web3 from 'web3';
-import MetaSolarNFT from "../assets/MetaSolarNFT.json";
+import useBuyToken  from "../hook/useBuyToken";
+import useTruncatedAddress  from "../hook/useTruncatedAddress";
 
 export default function BuyNft({ myRef }) {
 
   const [totalNft, setTotalNft] = useState(0)
-  const [byTokenResult, setBuyTokenResult] = useState('')
+  const { buyToken, response } = useBuyToken();
+  const {connectWallet, } = useTruncatedAddress()
     const userAddres = useSelector((state)=> state.userAddres.value)
   const onClickIncrease =()=>{
       if (totalNft>= 50){
@@ -32,27 +32,8 @@ export default function BuyNft({ myRef }) {
 const totalPrice = totalNft * 0.1;
  
 const onHandlerBuy = () =>{
-  
-const web3 = new Web3(window.ethereum);
-const contractAddress = '0x6364Cc28fe3A66e83f8ff6B6e15001a6AC556611';
-console.log(11,userAddres)
-console.log(22,totalNft)
-const contractAbi = MetaSolarNFT.abi;
-const contract = new web3.eth.Contract(contractAbi, contractAddress);
-const mintQuantity = totalNft;  
-const price = (0.1*totalNft).toString()
-const valueToSend = web3.utils.toWei(price, 'ether');
+  userAddres ? buyToken(userAddres, totalNft) : connectWallet()
 
-
-contract.methods.buyTokens(userAddres, mintQuantity).send({ from: userAddres, value: valueToSend })
-  .then((receipt) => {
-    console.log('Transaction receipt:', receipt);
-    setBuyTokenResult(receipt)
-  })
-  .catch((error) => {
-    console.error('Error:', error.message);
-    setBuyTokenResult(error.message)
-  });
 }
 
 
@@ -83,7 +64,7 @@ contract.methods.buyTokens(userAddres, mintQuantity).send({ from: userAddres, va
         <PriceIput> {totalPrice.toFixed(2)} BNB</PriceIput>
       </ToralPriceWrapper>
       <BuyBtn onClick={onHandlerBuy} >Buy</BuyBtn>
-    {byTokenResult !== '' && <div>{byTokenResult}</div>}
+    {response !== null && <div>{response}</div>}
       
     </Wrapper>
   );
