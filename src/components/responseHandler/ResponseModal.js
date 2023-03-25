@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setResponseHandler } from "../reducers/userWalletAddresReducer";
-export default function ResponseModal() {
+const ResponseModal = () => {
   const response = useSelector((state) => state.userAddres.resHandler);
   const dispatch = useDispatch();
   const onClickHandler = () => {
@@ -16,8 +16,8 @@ export default function ResponseModal() {
       <Button onClick={onClickHandler}>OK</Button>
     </Wrapper>
   );
-}
-
+};
+export default ResponseModal;
 const Wrapper = styled.div`
   width: 40%;
   height: 150px;

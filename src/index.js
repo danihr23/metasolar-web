@@ -1,22 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import GlobalStyle from './globalStyle';
-import {Provider} from 'react-redux'
-import {store} from './components/store/store'
+import React from "react";
+import ReactDOM from "react-dom/client";
+//import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import GlobalStyle from "./globalStyle";
+import { Provider } from "react-redux";
+import { store } from "./components/store/store";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider Provider store={store}>
-  <React.StrictMode>
-    <GlobalStyle/>
-   
-    <App />
-   
-  </React.StrictMode>
+    <React.StrictMode>
+      <GlobalStyle />
+
+      <App />
+    </React.StrictMode>
   </Provider>
 );
 

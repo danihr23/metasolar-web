@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/macro";
 import { roadmapData } from "../homepageStore/homePageStore";
-export default function RoadmapComponent() {
+const RoadmapComponent = () => {
   return (
     <Wrapper>
       <BoxesWrapper top="2329px" left="40%">
@@ -9,7 +9,9 @@ export default function RoadmapComponent() {
           return index === 0 || index === 2 ? (
             <Box key={index}>
               <ContentWrapper alignItems="flex-end">
-                <Title>0{index + 1} {item.title}</Title>
+                <Title>
+                  0{index + 1} {item.title}
+                </Title>
                 <Line />
                 <Text>{item.data}</Text>
               </ContentWrapper>
@@ -22,7 +24,9 @@ export default function RoadmapComponent() {
           return index === 1 || index === 3 ? (
             <Box key={index}>
               <ContentWrapper alignItems="flex-start">
-                <Title>0{index + 1} {item.title}</Title>
+                <Title>
+                  0{index + 1} {item.title}
+                </Title>
                 <Line />
                 <Text>{item.data}</Text>
               </ContentWrapper>
@@ -32,10 +36,10 @@ export default function RoadmapComponent() {
       </BoxesWrapper>
     </Wrapper>
   );
-}
-
+};
+export default RoadmapComponent;
 const Wrapper = styled.div`
-width:30% ;
+  width: 30%;
   position: absolute;
   top: -1%;
 `;
@@ -51,7 +55,6 @@ const BoxesWrapper = styled.div`
   left: ${(props) => props.left};
   top: ${(props) => props.top};
 `;
-
 
 const Title = styled.span`
   width: 47%;

@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import styled,{css} from "styled-components/macro";
+import styled, { css } from "styled-components/macro";
 import up from "../assets/up.png";
 import down from "../assets/down.png";
 
-export default function FAQComponent({ index, item, }) {
-    const [isOpen,setIsOpen]= useState(false)
+const FAQComponent = ({ index, item }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
-    const clickHandler = ()=>{
-        setIsOpen(!isOpen)
-    };
-  
+  const clickHandler = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
     <Wrapper key={index}>
@@ -22,12 +21,11 @@ export default function FAQComponent({ index, item, }) {
       </InnerWrapper>
     </Wrapper>
   );
-}
-
+};
+export default FAQComponent;
 const Wrapper = styled.div`
   display: flex;
 
-  
   padding: 0px;
   gap: 10px;
 
@@ -37,7 +35,7 @@ const Wrapper = styled.div`
 const InnerWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content:space-around ;
+  justify-content: space-around;
   align-items: flex-start;
   padding: 10px;
   gap: 10px;
@@ -49,19 +47,16 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
+
   gap: 10px;
 
   width: 95%;
   height: 70%;
-
-
-  
 `;
 
 const Title = styled.div`
- width: 20%;
-    height: 49%;
+  width: 20%;
+  height: 49%;
 
   font-family: "Inter";
   font-style: normal;
@@ -78,10 +73,9 @@ const Text = styled.div`
   font-size: 14px;
   line-height: 17px;
 
-
   color: #0f1d32;
 
-   ${({ isOpen, }) =>
+  ${({ isOpen }) =>
     isOpen
       ? css`
           margin: -1px 0px;
@@ -101,11 +95,11 @@ const Text = styled.div`
 `;
 
 const Up = styled.div`
-position:absolute ;
-width: 3%;
-    height: 4%;
+  position: absolute;
+  width: 3%;
+  height: 4%;
   left: 85%;
-   
-  background: transparent url(${(props) =>props.isOpen ? down : up}) top center no-repeat;
 
+  background: transparent url(${(props) => (props.isOpen ? down : up)}) top
+    center no-repeat;
 `;

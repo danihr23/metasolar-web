@@ -3,12 +3,25 @@ import styled from "styled-components/macro";
 import BuyButton from "../buttons/BuyButton";
 import { scrollByPosition } from "../hook/scrollHook";
 
-const HomePageGallery = ({ onClick,height,width,bottom }) => {
-  const onClickHandler=()=>{
-    scrollByPosition(10)
-  }
+const HomePageGallery = ({
+  onClick,
+  height,
+  width,
+  bottom,
+  position,
+  left,
+}) => {
+  const onClickHandler = () => {
+    scrollByPosition(10);
+  };
   return (
-    <Wrapper height={height} width={width} bottom={bottom} >
+    <Wrapper
+      height={height}
+      width={width}
+      bottom={bottom}
+      position={position}
+      left={left}
+    >
       <Title>Gallery</Title>
       <Text>
         Below is just a part of the MetaSolar NFT. Click on a panel to buy it.
@@ -16,11 +29,10 @@ const HomePageGallery = ({ onClick,height,width,bottom }) => {
         arcu, ac ultrices urna metus vitae ipsum.
       </Text>
       <ButtonWrapper>
-        
         <BuyButton
-          to={'/'}
+          to={"/"}
           onClick={onClick}
-          btnPosition={'relative'}
+          btnPosition={"relative"}
           btnBorderRadius={"7.2381px"}
           btnBackground={" #FF9920"}
           btnText={"Buy"}
@@ -30,10 +42,10 @@ const HomePageGallery = ({ onClick,height,width,bottom }) => {
         />
 
         <BuyButton
-        to={'/Gallery'}
-        onClick={onClickHandler}
-           btnPosition={'relative'}
-         btnBorderRadius={"6.54875px"}
+          to={"/Gallery"}
+          onClick={onClickHandler}
+          btnPosition={"relative"}
+          btnBorderRadius={"6.54875px"}
           btnBackground={" #FFFFFF"}
           btnText={"Check your nfts"}
           bntBorder={"0.904762px solid #3A712D"}
@@ -41,8 +53,6 @@ const HomePageGallery = ({ onClick,height,width,bottom }) => {
           primeryLineHeight={"15px"}
           primeryColor={"#3A712D"}
         />
-
-       
       </ButtonWrapper>
     </Wrapper>
   );
@@ -56,12 +66,12 @@ const Wrapper = styled.div`
   padding: 0px;
   gap: 30px;
 
-  position: absolute;
+  position: ${(props) => (props.position ? props.position : "absolute")};
   width: ${(props) => props.width && props.width};
-  left: 20%;
+  left: ${(props) => props.left && props.left};
   height: ${(props) => props.height && props.height};
 
-  bottom: ${(props) => props.bottom && props.bottom};;
+  bottom: ${(props) => props.bottom && props.bottom}; ;
 `;
 
 const Title = styled.div`
@@ -102,4 +112,3 @@ const ButtonWrapper = styled.div`
   width: 44%;
   height: 20%;
 `;
-

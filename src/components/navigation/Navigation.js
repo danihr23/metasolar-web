@@ -6,12 +6,10 @@ import twitterIcon from "../assets/twitterIcon.png";
 import whiteTwitter from "../assets/whiteTwitter.png";
 import whiteIcon from "../assets/whiteicon.png";
 import logoWhite from "../assets/logoWhite.png";
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { scrollToFaq,scrollToRoadmap } from "../hook/scrollHook";
-import useTruncatedAddress  from "../hook/useTruncatedAddress";
-
-
+import { scrollToFaq, scrollToRoadmap } from "../hook/scrollHook";
+import useTruncatedAddress from "../hook/useTruncatedAddress";
 
 const Navigation = ({
   flexDirection,
@@ -22,39 +20,49 @@ const Navigation = ({
   color,
   footer,
 }) => {
+  const { connectWallet } = useTruncatedAddress();
 
- const {connectWallet} = useTruncatedAddress()
- 
- const userAddres = useSelector((state)=> state.userAddres.value)
- 
+  const userAddres = useSelector((state) => state.userAddres.value);
 
-  const onClickHandler = ()=>{
-      connectWallet()
-  }
+  const onClickHandler = () => {
+    connectWallet();
+  };
 
-
- 
   return (
-
     <Wrapper flexDirection={flexDirection} height={height}>
       <Logo logoleft={logoleft} to={"/"} iswhite={footer} />
       <Menu>
-        <NavTool to={"/About"} color={color}>About</NavTool>
-        <NavTool to={"/Gallery"} color={color}>Gallery</NavTool>
+        <NavTool to={"/About"} color={color}>
+          About
+        </NavTool>
+        <NavTool to={"/Gallery"} color={color}>
+          Gallery
+        </NavTool>
         <NavTool to={"/"} onClick={scrollToRoadmap} color={color}>
           Roadmap
         </NavTool>
-        <NavTool to={'/'} onClick={scrollToFaq} color={color}>
+        <NavTool to={"/"} onClick={scrollToFaq} color={color}>
           FAQ
         </NavTool>
         <NavTool color={color}>Whitepaper</NavTool>
-        {isWallet && <Button  onClick={onClickHandler}> {!userAddres ? "WALLET" : userAddres.substring(0, 8) + '...' } </Button>}
-           
+        {isWallet && (
+          <Button onClick={onClickHandler}>
+            {" "}
+            {!userAddres ? "WALLET" : userAddres.substring(0, 8) + "..."}{" "}
+          </Button>
+        )}
 
-        <MediaIcon background={footer ? whiteIcon : mediaIcon}  />
-        <MediaIcon background={footer ? whiteTwitter : twitterIcon} to={'https://twitter.com/?lang=en'}/>
+        <MediaIcon background={footer ? whiteIcon : mediaIcon} />
+        <MediaIcon
+          background={footer ? whiteTwitter : twitterIcon}
+          to={"https://twitter.com/?lang=en"}
+        />
       </Menu>
-      {isCompany && <div style=  {{color: '#7E91B0'}} >© 2022 Metasolar. All rights reserved</div>}
+      {isCompany && (
+        <div style={{ color: "#7E91B0" }}>
+          © 2022 Metasolar. All rights reserved
+        </div>
+      )}
     </Wrapper>
   );
 };

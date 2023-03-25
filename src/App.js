@@ -9,7 +9,7 @@ import ResponseModal from "./components/responseHandler/ResponseModal";
 
 const App = () => {
   const responseHandler = useSelector((state) => state.userAddres.resHandler);
-  console.log(22, responseHandler);
+
   return (
     <Router>
       <Wrapper>

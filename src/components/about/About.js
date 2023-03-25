@@ -3,12 +3,11 @@ import styled from "styled-components/macro";
 import panelsImg from "../assets/panelsImg.png";
 import Footer from "../footer/Footer";
 import { persons } from "../homepageStore/homePageStore";
-import { scrollByPosition } from '../hook/scrollHook';
-export default function About() {
-
-  const onClick =()=>{
-    scrollByPosition(200)
-  }
+import { scrollByPosition } from "../hook/scrollHook";
+const About = () => {
+  const onClick = () => {
+    scrollByPosition(200);
+  };
   return (
     <Wrapper>
       <ContentWrapper>
@@ -33,25 +32,25 @@ export default function About() {
         </InfoWrapper>
         <TeamTitle>Team</TeamTitle>
         <TeamWrapper>
-        {persons.map((item, index) => {
-          return (
-            <PersonInfoWrapper key={index}>
-              <PersonImg background={item.image} />
-              <PersonalInfoWrapper>
-              <Name>{item.name}</Name>
-              <Line/>
-              <Position>{item.position}</Position>
-              </PersonalInfoWrapper>
-            </PersonInfoWrapper>
-          );
-        })}
+          {persons.map((item, index) => {
+            return (
+              <PersonInfoWrapper key={index}>
+                <PersonImg background={item.image} />
+                <PersonalInfoWrapper>
+                  <Name>{item.name}</Name>
+                  <Line />
+                  <Position>{item.position}</Position>
+                </PersonalInfoWrapper>
+              </PersonInfoWrapper>
+            );
+          })}
         </TeamWrapper>
       </ContentWrapper>
-      <Footer top={'1200px'} onClickBuy={onClick} roadmapPosions={1500}/>
+      <Footer top={"1200px"} onClickBuy={onClick} roadmapPosions={1500} />
     </Wrapper>
   );
-}
-
+};
+export default About;
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
@@ -106,7 +105,6 @@ const Title = styled.div`
   color: #283447;
 `;
 
-
 const Text = styled.div`
   position: absolute;
   width: 273px;
@@ -134,133 +132,116 @@ const InfoWrapper = styled.div`
   padding: 29px;
   display: flex;
   justify-content: center;
-    align-items: center;
+  align-items: center;
   background: #f3f8fc;
   border-radius: 20px;
-  font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 29px;
-/* or 150% */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 29px;
+  /* or 150% */
 
+  /* text colour */
 
-/* text colour */
-
-color: #0F1D32;
+  color: #0f1d32;
 `;
 
 const TeamTitle = styled.div`
-position: absolute;
-width: 465px;
-height: 39px;
-left: 408px;
-top: 815px;
+  position: absolute;
+  width: 465px;
+  height: 39px;
+  left: 408px;
+  top: 815px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 32px;
-line-height: 39px;
-/* identical to box height */
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  /* identical to box height */
 
-text-align: center;
+  text-align: center;
 
-/* title colour */
+  /* title colour */
 
-color: #283447;
-
-
-`
+  color: #283447;
+`;
 
 const TeamWrapper = styled.div`
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-align-items: center;
-    padding: 0px;
-    gap: 16px;
-    position: relative;
-    width: 100%;
-    height: 300px;
-    top: 884px;
-    justify-content: center;
-
-`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  align-items: center;
+  padding: 0px;
+  gap: 16px;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  top: 884px;
+  justify-content: center;
+`;
 const PersonInfoWrapper = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-padding: 0px;
-gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  gap: 10px;
 
-width: 200px;
-height: 293px;
-
-
-`
+  width: 200px;
+  height: 293px;
+`;
 
 const PersonImg = styled.div`
-width: 200px;
-height: 200px;
-background: transparent url(${(props) => props.background}) top center
+  width: 200px;
+  height: 200px;
+  background: transparent url(${(props) => props.background}) top center
     no-repeat;
   background-size: contain;
-
-
-`
+`;
 const PersonalInfoWrapper = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-padding: 10px 0px;
-gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0px;
+  gap: 10px;
 
-position: relative;
-height: 83px;
+  position: relative;
+  height: 83px;
+`;
 
+const Name = styled.div`
+  height: 24px;
 
-`
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
 
-const Name= styled.div`
+  /* text colour */
 
-height: 24px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 24px;
-
-/* text colour */
-
-color: #0F1D32;
-
-
-`
-const Line= styled.div`
-
-width: 54px;
-height: 0px;
-border: 1px solid #7EC465;
-`
+  color: #0f1d32;
+`;
+const Line = styled.div`
+  width: 54px;
+  height: 0px;
+  border: 1px solid #7ec465;
+`;
 
 const Position = styled.div`
+  width: 143px;
+  height: 19px;
 
-width: 143px;
-height: 19px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 19px;
-text-align: center;
+  /* text colour */
 
-/* text colour */
-
-color: #0F1D32;
-
-
-`
+  color: #0f1d32;
+`;

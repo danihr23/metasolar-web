@@ -6,7 +6,7 @@ import useBuyToken from "../hook/useBuyToken";
 import useTruncatedAddress from "../hook/useTruncatedAddress";
 import { useDispatch } from "react-redux";
 import { setResponseHandler } from "../reducers/userWalletAddresReducer";
-export default function BuyNft({ myRef }) {
+const BuyNft = ({ myRef }) => {
   const dispatch = useDispatch();
   const [totalNft, setTotalNft] = useState(0);
   const { buyToken } = useBuyToken();
@@ -70,8 +70,8 @@ export default function BuyNft({ myRef }) {
       <BuyBtn onClick={onHandlerBuy}>Buy</BuyBtn>
     </Wrapper>
   );
-}
-
+};
+export default BuyNft;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;

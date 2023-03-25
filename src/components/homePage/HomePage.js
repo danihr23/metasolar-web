@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import styled from "styled-components/macro";
 import solarPanelImg from "../assets/solarPanelImg.png";
-import { CountdownMonths } from "../countDownTimer/CountdownTimer";
+import CountdownMonths from "../countDownTimer/CountdownTimer";
 import SolarNFT from "../solarNFT/SolarNFT";
 import BuySolarInfo from "../buySolar/BuySolarInfo";
 import HomePageAbout from "../about/HomePageAbout";
@@ -38,11 +38,17 @@ const HomePage = ({ roadmapRef }) => {
       <SolarNFT />
       <BuySolarInfo />
       <HomePageAbout />
-      <HomePageGallery onClick={onClickBuy} height="37%" bottom="-184%" width="62%"/>
-      <GalleryNFT nftCount={320} top={'1500px'} overflow='auto' />
+      <HomePageGallery
+        onClick={onClickBuy}
+        height="37%"
+        bottom="-184%"
+        width="62%"
+        left="20%"
+      />
+      <GalleryNFT nftCount={320} top={"1500px"} overflow="auto" />
       <Roadmap id="roadmap-section">Roadmap</Roadmap>
       <RoadmapComponent roadmapRef={roadmapRef} />
-      <WrapperFAQ id="my-section" >
+      <WrapperFAQ id="my-section">
         <FaqTittle>FAQ</FaqTittle>
         <FaqWrapper>
           {FAQ.map((item, index) => {
@@ -50,7 +56,7 @@ const HomePage = ({ roadmapRef }) => {
           })}
         </FaqWrapper>
       </WrapperFAQ>
-     <Footer top={'3403px'} onClickBuy={onClickBuy} />
+      <Footer top={"3403px"} onClickBuy={onClickBuy} />
     </HomePageWrapper>
   );
 };
@@ -140,7 +146,7 @@ const WrapperFAQ = styled.div`
   position: absolute;
   gap: 30px;
   width: 100%;
-    height: 89%;
+  height: 89%;
   flex-direction: column;
   top: 2864.17px;
   background: #f3f8fc;
@@ -150,7 +156,6 @@ const WrapperFAQ = styled.div`
 `;
 
 const FaqTittle = styled.div`
-
   width: 30%;
   height: 8%;
 

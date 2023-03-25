@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
-export default function BuyButton({
+const BuyButton = ({
   onClick,
   btnText,
   btnBorderRadius,
@@ -16,8 +16,8 @@ export default function BuyButton({
   btnWidth,
   btnHeight,
   btnZindex,
-  to
-}) {
+  to,
+}) => {
   return (
     <Button
       to={to}
@@ -41,16 +41,18 @@ export default function BuyButton({
       </Primery>
     </Button>
   );
-}
+};
+
+export default BuyButton;
 const Button = styled(Link)`
   box-sizing: border-box;
 
   position: ${(props) => props.position};
-  z-index:${(props) => props.zindex && props.zindex};
-  top: ${(props) => props.top ? props.top:''};
-  left: ${(props) => props.left ? props.left : ''};
-  width: ${(props) => props.width ? props.width : '48%'};;
-  height: ${(props) => props.height ? props.height : '90%'};;
+  z-index: ${(props) => props.zindex && props.zindex};
+  top: ${(props) => (props.top ? props.top : "")};
+  left: ${(props) => (props.left ? props.left : "")};
+  width: ${(props) => (props.width ? props.width : "48%")};
+  height: ${(props) => (props.height ? props.height : "90%")};
   background: ${(props) => props.background};
   border: ${(props) => props.border};
   border-radius: ${(props) => props.borderradius};
