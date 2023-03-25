@@ -1,43 +1,43 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
 import nft from "../assets/nft.png";
-import { useSelector } from 'react-redux'
-import useBuyToken  from "../hook/useBuyToken";
-import useTruncatedAddress  from "../hook/useTruncatedAddress";
-
+import { useSelector } from "react-redux";
+import useBuyToken from "../hook/useBuyToken";
+import useTruncatedAddress from "../hook/useTruncatedAddress";
+import { useDispatch } from "react-redux";
+import { setResponseHandler } from "../reducers/userWalletAddresReducer";
 export default function BuyNft({ myRef }) {
-
-  const [totalNft, setTotalNft] = useState(0)
-  const { buyToken, response } = useBuyToken();
-  const {connectWallet, } = useTruncatedAddress()
-    const userAddres = useSelector((state)=> state.userAddres.value)
-  const onClickIncrease =()=>{
-      if (totalNft>= 50){
-        return
-      }
-      else {
-        setTotalNft(prev=> prev + 1);
-      }
-
-  }
-  const onClickDecrease = ()=>{
-    if (totalNft<= 0){
-      return
+  const dispatch = useDispatch();
+  const [totalNft, setTotalNft] = useState(0);
+  const { buyToken } = useBuyToken();
+  const { connectWallet } = useTruncatedAddress();
+  const userAddres = useSelector((state) => state.userAddres.value);
+  const onClickIncrease = () => {
+    if (totalNft >= 50) {
+      return;
+    } else {
+      setTotalNft((prev) => prev + 1);
     }
-    else {
-      setTotalNft(prev=> prev - 1);
+  };
+  const onClickDecrease = () => {
+    if (totalNft <= 0) {
+      return;
+    } else {
+      setTotalNft((prev) => prev - 1);
     }
-}
+  };
 
-const totalPrice = totalNft * 0.1;
- 
-const onHandlerBuy = () =>{
-  userAddres ? buyToken(userAddres, totalNft) : connectWallet()
+  const totalPrice = totalNft * 0.1;
 
-}
-
-
-
+  const onHandlerBuy = () => {
+    userAddres
+      ? totalNft > 0
+        ? buyToken(userAddres, totalNft)
+        : dispatch(
+            setResponseHandler("Please select how many NFT you want to buy!")
+          )
+      : connectWallet();
+  };
 
   return (
     <Wrapper ref={myRef}>
@@ -52,7 +52,11 @@ const onHandlerBuy = () =>{
       <AmountWrapper>
         <AmountConteiner>
           <AmountText>Amount</AmountText>
-          <Input placeholder="50 max" disabled value={totalNft >0 ? totalNft : '' } />
+          <Input
+            placeholder="50 max"
+            disabled
+            value={totalNft > 0 ? totalNft : ""}
+          />
         </AmountConteiner>
         <ButtonsConteiner>
           <IncreaseButton onClick={onClickIncrease}>+</IncreaseButton>
@@ -63,9 +67,7 @@ const onHandlerBuy = () =>{
         <Price>Price</Price>
         <PriceIput> {totalPrice.toFixed(2)} BNB</PriceIput>
       </ToralPriceWrapper>
-      <BuyBtn onClick={onHandlerBuy} >Buy</BuyBtn>
-    {response !== null && <div>{response}</div>}
-      
+      <BuyBtn onClick={onHandlerBuy}>Buy</BuyBtn>
     </Wrapper>
   );
 }

@@ -4,6 +4,7 @@ import {createSlice} from  '@reduxjs/toolkit'
 
 const wallet = {
     userAddres:'',
+    resHandler:'',
 }
 
 export const counterSlice=createSlice({
@@ -11,10 +12,13 @@ export const counterSlice=createSlice({
      initialState:wallet,
     reducers:{
         setUserAddres:(state,actions)=>{
-            state.value =actions.payload ;
+            state.value =actions.payload 
         },
+        setResponseHandler:(state,actions)=>{
+            state.resHandler=actions.payload
+        }
         
     }
 })
-export const {setUserAddres}= counterSlice.actions;
+export const {setUserAddres,setResponseHandler}= counterSlice.actions;
 export default counterSlice.reducer;

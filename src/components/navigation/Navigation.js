@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react";
+import React from "react";
 import styled from "styled-components/macro";
 import logo from "../assets/logo.png";
 import mediaIcon from "../assets/mediaIcon.png";
@@ -23,18 +23,16 @@ const Navigation = ({
   footer,
 }) => {
 
- const {connectWallet,  error} = useTruncatedAddress()
- const [addressNumber, setAddressNumber] = useState(null);
+ const {connectWallet} = useTruncatedAddress()
+ 
  const userAddres = useSelector((state)=> state.userAddres.value)
-  //const count = useSelector((state)=> state.userAddres.value)
+ 
 
   const onClickHandler = ()=>{
       connectWallet()
   }
 
-  useEffect(()=>{
-    userAddres && setAddressNumber(userAddres)
-  },[userAddres])
+
  
   return (
 
@@ -50,7 +48,7 @@ const Navigation = ({
           FAQ
         </NavTool>
         <NavTool color={color}>Whitepaper</NavTool>
-        {isWallet && <Button  onClick={onClickHandler}> {!addressNumber ? "WALLET" : addressNumber.substring(0, 8) + '...' } </Button>}
+        {isWallet && <Button  onClick={onClickHandler}> {!userAddres ? "WALLET" : userAddres.substring(0, 8) + '...' } </Button>}
            
 
         <MediaIcon background={footer ? whiteIcon : mediaIcon}  />
