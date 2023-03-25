@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { setResponseHandler } from "../reducers/userWalletAddresReducer";
-export default function ResponseHandler() {
+export default function ResponseModal() {
   const response = useSelector((state) => state.userAddres.resHandler);
   const dispatch = useDispatch();
   const onClickHandler = () => {

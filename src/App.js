@@ -2,24 +2,23 @@ import styled from "styled-components";
 import HomePage from "./components/homePage/HomePage";
 import Navigation from "./components/navigation/Navigation";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 import Gallery from "./components/gallery/Gallery";
 import About from "./components/about/About";
-import ResponseHandler from "./components/responseHandler/ResponseHandler";
+import ResponseModal from "./components/responseHandler/ResponseModal";
 
 const App = () => {
-
- const responseHandler = useSelector((state)=> state.userAddres.resHandler)
- console.log(22,responseHandler)
+  const responseHandler = useSelector((state) => state.userAddres.resHandler);
+  console.log(22, responseHandler);
   return (
     <Router>
       <Wrapper>
         <Navigation logoleft={"43px"} isWallet={true} />
-{responseHandler &&  <ResponseHandler/>}
+        {responseHandler && <ResponseModal />}
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/Gallery" element={<Gallery />} />
-          <Route path="/About" element={<About/>} />
+          <Route path="/About" element={<About />} />
         </Routes>
       </Wrapper>
     </Router>
