@@ -71,7 +71,25 @@ const Wrapper = styled.div`
   left: ${(props) => props.left && props.left};
   height: ${(props) => props.height && props.height};
 
-  bottom: ${(props) => props.bottom && props.bottom}; ;
+  bottom: ${(props) => props.bottom && props.bottom};
+  @media (max-width: 1100px) {
+    width: ${(props) => !props.position && "71%"};
+    top: ${(props) => !props.position && "1595px"};
+  }
+  @media (max-width: 930px) {
+    width: ${(props) => !props.position && "71%"};
+    top: ${(props) => !props.position && "1518px"};
+  }
+
+  @media (max-width: 720px) {
+    width: ${(props) => !props.position && "71%"};
+    top: ${(props) => !props.position && "1445px"};
+  }
+
+  @media (max-width: 440px) {
+    width: ${(props) => !props.position && "71%"};
+    top: ${(props) => !props.position && "1295px"};
+  }
 `;
 
 const Title = styled.div`
@@ -88,6 +106,28 @@ const Title = styled.div`
   text-align: center;
 
   color: #283447;
+  @media (max-width: 1100px) {
+    font-size: 35px;
+    line-height: 17px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 31px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 19px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 13px;
+    line-height: 14px;
+    width: 100%;
+  }
 `;
 const Text = styled.div`
   width: 100%;
@@ -101,6 +141,30 @@ const Text = styled.div`
   /* text colour */
 
   color: #0f1d32;
+  @media (max-width: 1100px) {
+    font-size: 17px;
+    line-height: 20px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 15px;
+    line-height: 20px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 14px;
+    line-height: 16px;
+    width: 100%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 10px;
+    line-height: 12px;
+    width: 100%;
+    position: relative;
+    top: -20px;
+  }
 `;
 
 const ButtonWrapper = styled.div`

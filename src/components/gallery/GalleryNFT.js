@@ -49,7 +49,7 @@ const GalleryNFT = ({ nftCount, top, overflow, height }) => {
 export default GalleryNFT;
 const Wrapper = styled.div`
   display: grid;
-  grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  grid-template-columns: auto auto auto auto;
   justify-content: center;
   align-items: flex-start;
   position: relative;
@@ -94,8 +94,8 @@ const NftBox = styled.div`
 const Vector = styled.div`
   position: relative;
   gap: 3px;
-  width: 2px;
-  height: 8px;
+  width: 12px;
+  height: 70px;
   background: ${(props) => props.background};
   border-top-left-radius: ${(props) => props.index === 0 && "7"}px;
   border-bottom-left-radius: ${(props) => props.index === 0 && "7"}px;

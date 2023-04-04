@@ -79,6 +79,17 @@ const Wrapper = styled.div`
   height: ${(props) => (props.height ? props.height : "5%")};
   left: 3%;
   top: 40px;
+  @media (max-width: 1100px) {
+    top: 30px;
+  }
+
+  @media (max-width: 640px) {
+    top: 20px;
+  }
+
+  @media (max-width: 440px) {
+    top: 20px;
+  }
 `;
 
 const Logo = styled(Link)`
@@ -91,6 +102,17 @@ const Logo = styled(Link)`
   background: transparent url(${(props) => (props.iswhite ? logoWhite : logo)})
     top center no-repeat;
   background-size: contain;
+  @media (max-width: 1100px) {
+    height: 20px;
+  }
+
+  @media (max-width: 640px) {
+    height: 16px;
+  }
+
+  @media (max-width: 440px) {
+    height: 12px;
+  }
 `;
 const Menu = styled.div`
   width: 48%;
@@ -99,6 +121,17 @@ const Menu = styled.div`
   align-items: center;
   justify-content: space-around;
   z-index: 2;
+  @media (max-width: 1100px) {
+    width: 53%;
+  }
+
+  @media (max-width: 640px) {
+    width: 62%;
+  }
+
+  @media (max-width: 440px) {
+    width: 72%;
+  }
 `;
 const NavTool = styled(Link)`
   text-decoration: none;
@@ -110,6 +143,26 @@ const NavTool = styled(Link)`
   font-weight: 600;
   font-size: 14px;
   line-height: 17px;
+  @media (max-width: 1100px) {
+    height: 14px;
+
+    font-size: 10px;
+    line-height: 13px;
+  }
+
+  @media (max-width: 640px) {
+    height: 12px;
+
+    font-size: 8px;
+    line-height: 15px;
+  }
+
+  @media (max-width: 440px) {
+    height: 10px;
+
+    font-size: 6px;
+    line-height: 12px;
+  }
 `;
 const Button = styled.div`
   width: 70px;
@@ -123,6 +176,22 @@ const Button = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 1100px) {
+    width: 50px;
+    height: 20px;
+  }
+
+  @media (max-width: 640px) {
+    width: 40px;
+    height: 18px;
+    font-size: 7px;
+  }
+
+  @media (max-width: 440px) {
+    width: 30px;
+    height: 16px;
+    font-size: 5px;
+  }
 `;
 const MediaIcon = styled(Link)`
   width: 24px;
@@ -131,4 +200,18 @@ const MediaIcon = styled(Link)`
   background: transparent url(${(props) => props.background}) top center
     no-repeat;
   background-size: contain;
+  @media (max-width: 1100px) {
+    width: 20px;
+    height: 15px;
+  }
+
+  @media (max-width: 640px) {
+    width: 18px;
+    height: 13px;
+  }
+
+  @media (max-width: 440px) {
+    width: 16px;
+    height: 11px;
+  }
 `;

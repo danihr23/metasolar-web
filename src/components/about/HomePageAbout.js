@@ -35,6 +35,31 @@ const Wrapper = styled.div`
   align-items: center;
   background: #daf5d0;
   border-radius: 20px;
+  @media (max-width: 1100px) {
+    width: 100%;
+    top: 1252px;
+
+    height: 289px;
+  }
+  @media (max-width: 930px) {
+    width: 100%;
+    top: 1169px;
+    height: 289px;
+  }
+
+  @media (max-width: 720px) {
+    width: 100%;
+    top: 1080px;
+    /* left: 4%; */
+    height: 289px;
+  }
+
+  @media (max-width: 440px) {
+    width: 100%;
+    top: 965px;
+    /* left: 4%; */
+    height: 289px;
+  }
 `;
 
 const ContentWrapper = styled.div`
@@ -59,6 +84,28 @@ const Title = styled.div`
   line-height: 39px;
   text-align: center;
   color: #283447;
+  @media (max-width: 1100px) {
+    font-size: 27px;
+    line-height: 17px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 22px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 19px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 13px;
+    line-height: 14px;
+    width: 100%;
+  }
 `;
 
 const Text = styled.div`
@@ -71,6 +118,28 @@ const Text = styled.div`
   font-size: 18px;
   line-height: 22px;
   color: #0f1d32;
+  @media (max-width: 1100px) {
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 12px;
+    line-height: 12px;
+    width: 100%;
+  }
 `;
 
 const Button = styled(Link)`
@@ -100,4 +169,30 @@ const ButtonText = styled.div`
   text-transform: uppercase;
 
   color: #3a712d;
+  @media (max-width: 1100px) {
+    font-size: 13px;
+    line-height: 17px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 11px;
+    line-height: 13px;
+    width: 100%;
+    left: 1%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 9px;
+    line-height: 8px;
+    width: 100%;
+    left: 1%;
+    right: 8%;
+    top: 35.25%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 6px;
+    line-height: 9px;
+    width: 100%;
+  }
 `;

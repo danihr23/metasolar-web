@@ -73,4 +73,31 @@ const Primery = styled.div`
   color: ${(props) => props.color};
   text-align: center;
   text-transform: uppercase;
+  @media (max-width: 1100px) {
+    font-size: 13px;
+    line-height: 17px;
+    left: -1px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 11px;
+    line-height: 13px;
+    width: 100%;
+    left: 1%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 9px;
+    line-height: 8px;
+    width: 100%;
+    left: 1%;
+    right: 8%;
+    top: 35.25%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 6px;
+    line-height: 9px;
+    width: 100%;
+  }
 `;

@@ -1,5 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components/macro';
-
+import styled, { createGlobalStyle } from "styled-components/macro";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -18,9 +17,8 @@ const GlobalStyle = createGlobalStyle`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;  
-
-    height: 100%;
-
+   overflow:scroll ;
+      width:100% ;
     //Disable touch zooming and scrolling. Important to reenable on buttons, menus, etc.
     touch-action: none;
 
@@ -41,7 +39,6 @@ export const ContentWrapper = styled.div`
   //Disable scrolling on supported devices
   overflow: clip;
   overscroll-behavior-x: none;
-
 `;
 
 export default GlobalStyle;

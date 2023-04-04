@@ -33,6 +33,33 @@ const Wrapper = styled.div`
   height: 281px;
   left: 11%;
   top: 848.48px;
+
+  @media (max-width: 1100px) {
+    width: 100%;
+    top: 780px;
+    left: 4%;
+    height: 289px;
+  }
+  @media (max-width: 930px) {
+    width: 100%;
+    top: 682px;
+    left: 4%;
+    height: 289px;
+  }
+
+  @media (max-width: 720px) {
+    width: 100%;
+    top: 580px;
+    left: 4%;
+    height: 289px;
+  }
+
+  @media (max-width: 440px) {
+    width: 100%;
+    top: 501px;
+    left: 4%;
+    height: 289px;
+  }
 `;
 const NFTWrapper = styled.div`
   display: flex;
@@ -43,6 +70,21 @@ const NFTWrapper = styled.div`
 
   width: 100%;
   height: 67%;
+
+  @media (max-width: 1100px) {
+    flex-wrap: wrap;
+  }
+  @media (max-width: 930px) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 720px) {
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 440px) {
+    flex-wrap: wrap;
+  }
 `;
 const Titile = styled.div`
   width: 52%;
@@ -58,6 +100,28 @@ const Titile = styled.div`
   text-align: center;
 
   color: #283447;
+  @media (max-width: 1100px) {
+    font-size: 35px;
+    line-height: 29px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 27px;
+    line-height: 29px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 21px;
+    line-height: 29px;
+    width: 100%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 21px;
+    line-height: 29px;
+    width: 100%;
+  }
 `;
 
 const InfoWrapper = styled.div`
@@ -93,6 +157,28 @@ const DataTitle = styled.div`
   /* text colour */
 
   color: #0f1d32;
+  @media (max-width: 1100px) {
+    font-size: 11px;
+    line-height: 14px;
+    width: 74px;
+  }
+  @media (max-width: 930px) {
+    font-size: 11px;
+    line-height: 14px;
+    width: 74px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 11px;
+    line-height: 14px;
+    width: 74px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 11px;
+    line-height: 14px;
+    width: 74px;
+  }
 `;
 
 const DataPower = styled.div`
@@ -109,4 +195,26 @@ const DataPower = styled.div`
   /* title colour */
 
   color: #283447;
+  @media (max-width: 1100px) {
+    font-size: 27px;
+    line-height: 17px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 22px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 19px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 13px;
+    line-height: 14px;
+    width: 100%;
+  }
 `;

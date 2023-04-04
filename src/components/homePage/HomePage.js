@@ -15,12 +15,15 @@ import { scroll } from "../hook/scrollHook";
 import Footer from "../footer/Footer";
 
 const HomePage = ({ roadmapRef }) => {
+  // const { scaleCoef, isLandscape } = useTheme();
   const myRef = useRef(null);
 
   const onClickBuy = () => {
     console.log(55, myRef.current);
     scroll(myRef);
   };
+
+  //console.log(22, scaleCoef);
 
   return (
     <HomePageWrapper>
@@ -76,6 +79,18 @@ const NavWrapper = styled.div`
   display: flex;
   justify-content: center;
   background-color: #f1f7fd;
+
+  @media (max-width: 1100px) {
+    height: 650px;
+  }
+
+  @media (max-width: 720px) {
+    height: 458px;
+  }
+
+  @media (max-width: 440px) {
+    height: 398px;
+  }
 `;
 
 const SolarPanelImg = styled.div`
@@ -88,6 +103,20 @@ const SolarPanelImg = styled.div`
   background: transparent url(${solarPanelImg}) top center no-repeat;
   background-size: contain;
   border-radius: 17px;
+
+  @media (max-width: 1100px) {
+    height: 300px;
+  }
+
+  @media (max-width: 720px) {
+    height: 250px;
+    top: 385px;
+  }
+
+  @media (max-width: 440px) {
+    height: 200px;
+    top: 350px;
+  }
 `;
 
 const TextField = styled.div`
@@ -101,6 +130,22 @@ const TextField = styled.div`
   height: 180px;
   left: 11%;
   top: 200.65px;
+  @media (max-width: 1100px) {
+    height: 160px;
+    gap: 17px;
+  }
+
+  @media (max-width: 720px) {
+    height: 120px;
+    gap: 14px;
+    left: 30px;
+  }
+
+  @media (max-width: 440px) {
+    height: 120px;
+    gap: 11px;
+    left: 16px;
+  }
 `;
 const Title = styled.div`
   width: 100%;
@@ -113,6 +158,23 @@ const Title = styled.div`
   flex: none;
   order: 0;
   flex-grow: 0;
+  @media (max-width: 1100px) {
+    font-size: 40px;
+    line-height: 53px;
+  }
+  @media (max-width: 930px) {
+    font-size: 20px;
+    line-height: 40px;
+  }
+  @media (max-width: 720px) {
+    font-size: 22px;
+    line-height: 33px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 15px;
+    line-height: 23px;
+  }
 `;
 const Text = styled.div`
   width: 97%;
@@ -125,6 +187,23 @@ const Text = styled.div`
   flex: none;
   order: 1;
   flex-grow: 0;
+  @media (max-width: 1100px) {
+    font-size: 18px;
+    line-height: 20px;
+  }
+  @media (max-width: 930px) {
+    font-size: 15px;
+    line-height: 18px;
+  }
+  @media (max-width: 720px) {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 13px;
+    line-height: 16px;
+  }
 `;
 const Roadmap = styled.div`
   position: absolute;
@@ -139,6 +218,20 @@ const Roadmap = styled.div`
   line-height: 39px;
   text-align: center;
   color: #283447;
+  @media (max-width: 1100px) {
+    font-size: 25px;
+    line-height: 28px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 15px;
+    line-height: 19px;
+  }
 `;
 
 const WrapperFAQ = styled.div`
@@ -166,6 +259,20 @@ const FaqTittle = styled.div`
   line-height: 39px;
   text-align: center;
   color: #283447;
+  @media (max-width: 1100px) {
+    font-size: 25px;
+    line-height: 28px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 20px;
+    line-height: 22px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 15px;
+    line-height: 19px;
+  }
 `;
 const FaqWrapper = styled.div`
   display: flex;
@@ -177,4 +284,18 @@ const FaqWrapper = styled.div`
   position: relative;
   width: 781px;
   height: 418px;
+  @media (max-width: 1100px) {
+    width: 581px;
+    height: 318px;
+  }
+
+  @media (max-width: 720px) {
+    width: 481px;
+    height: 218px;
+  }
+
+  @media (max-width: 440px) {
+    width: 381px;
+    height: 118px;
+  }
 `;

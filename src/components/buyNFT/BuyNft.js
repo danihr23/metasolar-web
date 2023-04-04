@@ -89,6 +89,30 @@ const Wrapper = styled.div`
   background: #ffffff;
   box-shadow: -10.8571px 9.04762px 10.8571px rgba(40, 52, 71, 0.05);
   border-radius: 10.8571px;
+
+  @media (max-width: 1100px) {
+    height: 59%;
+    left: 49%;
+    top: 30%;
+    width: 23%;
+    padding: 21px;
+  }
+
+  @media (max-width: 720px) {
+    height: 56%;
+    left: 48%;
+    top: 22%;
+    width: 21%;
+    padding: 21px;
+  }
+
+  @media (max-width: 440px) {
+    height: 43%;
+    left: 44%;
+    top: 16%;
+    width: 19%;
+    padding: 21px;
+  }
 `;
 const Title = styled.div`
   width: 80%;
@@ -100,6 +124,23 @@ const Title = styled.div`
   font-size: 24px;
   line-height: 29px;
   color: #000000;
+  @media (max-width: 1100px) {
+    font-size: 16px;
+    line-height: 13px;
+    width: 170px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 12px;
+    line-height: 9px;
+    width: 125px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 10px;
+    line-height: 13px;
+    width: 101px;
+  }
 `;
 const Text = styled.div`
   width: 90%;
@@ -110,6 +151,28 @@ const Text = styled.div`
   font-size: 16px;
   line-height: 19px;
   color: #000000;
+  @media (max-width: 1100px) {
+    font-size: 15px;
+    line-height: 21px;
+    width: 154px;
+  }
+  @media (max-width: 930px) {
+    font-size: 14px;
+    line-height: 19px;
+    width: 154px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 13px;
+    line-height: 14px;
+    width: 94px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 11px;
+    line-height: 10px;
+    width: 74px;
+  }
 `;
 
 const NftImgWrapper = styled.div`
@@ -126,12 +189,46 @@ const NftImgWrapper = styled.div`
   background: #ffffff;
   border: 0.904762px solid #969fa5;
   border-radius: 9.04762px;
+
+  @media (max-width: 1100px) {
+    height: 15%;
+    padding: 10px;
+    gap: 6px;
+  }
+
+  @media (max-width: 720px) {
+    height: 13%;
+    padding: 5px;
+    gap: 3px;
+  }
+
+  @media (max-width: 440px) {
+    height: 12%;
+    padding: 5px;
+    gap: 3px;
+    position: relative;
+    top: 11px;
+  }
 `;
 const Image = styled.div`
   width: 24%;
   height: 65px;
   background: transparent url(${nft}) top center no-repeat;
   background-size: contain;
+  @media (max-width: 1100px) {
+    height: 45px;
+    width: 100px;
+  }
+
+  @media (max-width: 720px) {
+    height: 25px;
+    width: 80px;
+  }
+
+  @media (max-width: 440px) {
+    height: 15px;
+    width: 60px;
+  }
 `;
 const PriceText = styled.div`
   width: 73%;
@@ -144,6 +241,32 @@ const PriceText = styled.div`
   text-align: right;
 
   color: #021018;
+  @media (max-width: 1100px) {
+    font-size: 11px;
+    line-height: 13px;
+    width: 111px;
+    height: auto;
+  }
+  @media (max-width: 930px) {
+    font-size: 10px;
+    line-height: 11px;
+    width: 111px;
+    height: auto;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 5px;
+    line-height: 8px;
+    width: 80px;
+    height: auto;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 4px;
+    line-height: 5px;
+    width: 60px;
+    height: auto;
+  }
 `;
 const AmountWrapper = styled.div`
   display: flex;
@@ -151,6 +274,24 @@ const AmountWrapper = styled.div`
   justify-content: space-around;
   width: 93%;
   height: 16%;
+  @media (max-width: 1100px) {
+    height: 18%;
+
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    height: 14%;
+
+    width: 100%;
+  }
+
+  @media (max-width: 440px) {
+    height: 18%;
+    width: 100%;
+    position: relative;
+    top: 13px;
+  }
 `;
 
 const DecreaaseButton = styled.div`
@@ -174,6 +315,26 @@ const DecreaaseButton = styled.div`
   text-transform: uppercase;
   justify-content: center;
   color: #a82c43;
+  @media (max-width: 1100px) {
+    font-size: 15px;
+    line-height: 25px;
+    width: 55px;
+    height: 20px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 12px;
+    line-height: 24px;
+    width: 37px;
+    height: 15px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 8px;
+    line-height: 20px;
+    width: 25px;
+    height: 10px;
+  }
 `;
 const IncreaseButton = styled.div`
   position: relative;
@@ -200,6 +361,26 @@ const IncreaseButton = styled.div`
   /* secondary button */
 
   color: #3a712d;
+  @media (max-width: 1100px) {
+    font-size: 15px;
+    line-height: 25px;
+    width: 55px;
+    height: 20px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 12px;
+    line-height: 24px;
+    width: 37px;
+    height: 15px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 8px;
+    line-height: 20px;
+    width: 25px;
+    height: 10px;
+  }
 `;
 const ButtonsConteiner = styled.div`
   position: relative;
@@ -213,6 +394,35 @@ const AmountConteiner = styled.div`
   position: relative;
   width: 81%;
   height: 100%;
+  @media (max-width: 1100px) {
+    position: relative;
+    top: 5px;
+    height: 84%;
+    width: 135px;
+  }
+
+  @media (max-width: 930px) {
+    position: relative;
+    top: 5px;
+    height: 84%;
+    width: 107px;
+  }
+
+  @media (max-width: 720px) {
+    position: relative;
+    top: 1px;
+    height: 92%;
+    width: 84px;
+    left: -4px;
+  }
+
+  @media (max-width: 440px) {
+    position: relative;
+    top: 6px;
+    left: -4px;
+    height: 73%;
+    width: 46px;
+  }
 `;
 const AmountText = styled.div`
   position: absolute;
@@ -227,6 +437,32 @@ const AmountText = styled.div`
   letter-spacing: 0.08em;
   text-transform: uppercase;
   line-height: 25px;
+  @media (max-width: 1100px) {
+    font-size: 11px;
+    line-height: 25px;
+    width: 111px;
+    height: auto;
+  }
+  @media (max-width: 930px) {
+    font-size: 11px;
+    line-height: 25px;
+    width: 111px;
+    height: auto;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 12px;
+    line-height: 24px;
+    width: 80px;
+    height: auto;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 8px;
+    line-height: 20px;
+    width: 60px;
+    height: auto;
+  }
 `;
 
 const Input = styled.input`
@@ -273,6 +509,32 @@ const Price = styled.div`
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #acb5bd;
+  @media (max-width: 1100px) {
+    font-size: 11px;
+    line-height: 25px;
+    width: 111px;
+    height: auto;
+  }
+  @media (max-width: 840px) {
+    font-size: 11px;
+    line-height: 25px;
+    width: 111px;
+    height: auto;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 12px;
+    line-height: 24px;
+    width: 80px;
+    height: auto;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 8px;
+    line-height: 20px;
+    width: 60px;
+    height: auto;
+  }
 `;
 
 const PriceIput = styled.div`
@@ -296,6 +558,37 @@ const PriceIput = styled.div`
   /* identical to box height */
 
   color: #021018;
+
+  @media (max-width: 1100px) {
+    font-size: 13px;
+    line-height: 25px;
+    width: 100%;
+
+    top: 21px;
+    height: auto;
+  }
+  @media (max-width: 930px) {
+    font-size: 14px;
+    line-height: 25px;
+    top: 23px;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 13px;
+    line-height: 24px;
+    width: 100%;
+    height: auto;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 8px;
+    line-height: 20px;
+    width: 100%;
+    top: 18px;
+    height: 33px;
+  }
 `;
 const BuyBtn = styled.div`
   width: 48%;
@@ -314,4 +607,35 @@ const BuyBtn = styled.div`
   line-height: 16px;
   text-transform: uppercase;
   color: #ffffff;
+
+  @media (max-width: 1100px) {
+    font-size: 13px;
+    line-height: 25px;
+    width: 50%;
+
+    top: 21px;
+    height: auto;
+  }
+  @media (max-width: 930px) {
+    font-size: 14px;
+    line-height: 25px;
+    top: 23px;
+    width: 53%;
+    height: auto;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 13px;
+    line-height: 24px;
+    width: 58%;
+    height: auto;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 8px;
+    line-height: 20px;
+    width: 78%;
+    top: 7px;
+    height: 22px;
+  }
 `;
