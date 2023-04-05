@@ -125,21 +125,24 @@ const Title = styled.div`
   line-height: 29px;
   color: #000000;
   @media (max-width: 1100px) {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 13px;
     width: 170px;
+    font-weight: 600;
   }
 
   @media (max-width: 720px) {
-    font-size: 12px;
+    font-size: 11px;
     line-height: 9px;
     width: 125px;
+    font-weight: 600;
   }
 
   @media (max-width: 440px) {
-    font-size: 10px;
-    line-height: 13px;
+    font-size: 9px;
+    line-height: 12px;
     width: 101px;
+    font-weight: 600;
   }
 `;
 const Text = styled.div`
@@ -330,10 +333,10 @@ const DecreaaseButton = styled.div`
   }
 
   @media (max-width: 440px) {
-    font-size: 8px;
-    line-height: 20px;
-    width: 25px;
-    height: 10px;
+    font-size: 10px;
+    line-height: 19px;
+    width: 29px;
+    height: 15px;
   }
 `;
 const IncreaseButton = styled.div`
@@ -376,10 +379,10 @@ const IncreaseButton = styled.div`
   }
 
   @media (max-width: 440px) {
-    font-size: 8px;
-    line-height: 20px;
-    width: 25px;
-    height: 10px;
+    font-size: 10px;
+    line-height: 19px;
+    width: 29px;
+    height: 15px;
   }
 `;
 const ButtonsConteiner = styled.div`
@@ -418,10 +421,10 @@ const AmountConteiner = styled.div`
 
   @media (max-width: 440px) {
     position: relative;
-    top: 6px;
+    top: 0px;
     left: -4px;
-    height: 73%;
-    width: 46px;
+    height: 100%;
+    width: 55px;
   }
 `;
 const AmountText = styled.div`
@@ -484,6 +487,10 @@ const Input = styled.input`
     /* identical to box height */
 
     color: #969fa5;
+  }
+
+  @media (max-width: 440px) {
+    padding: 0;
   }
 `;
 

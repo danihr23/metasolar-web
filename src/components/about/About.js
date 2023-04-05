@@ -78,7 +78,7 @@ const GreenWrapper = styled.div`
   background: #daf5d0;
   @media (max-width: 1100px) {
     width: 65%;
-    height: 578px;
+    height: 596px;
   }
   @media (max-width: 930px) {
     width: 65%;
@@ -87,12 +87,12 @@ const GreenWrapper = styled.div`
 
   @media (max-width: 720px) {
     width: 65%;
-    height: 578px;
+    height: 550px;
   }
 
   @media (max-width: 440px) {
-    width: 65%;
-    height: 578px;
+    width: 69%;
+    height: 456px;
   }
 `;
 
@@ -106,21 +106,25 @@ const Image = styled.div`
   background: transparent url(${panelsImg}) top center no-repeat;
   background-size: contain;
   @media (max-width: 1100px) {
-    height: 259px;
-    left: -25px;
-    top: 173px;
+    height: 322px;
+    left: 58px;
+    top: 131px;
   }
-
+  @media (max-width: 930px) {
+    height: 294px;
+    left: -17px;
+    top: 131px;
+  }
   @media (max-width: 720px) {
-    height: 259px;
-    left: -25px;
-    top: 173px;
+    height: 225px;
+    left: -69px;
+    top: 166px;
   }
 
   @media (max-width: 440px) {
-    height: 259px;
-    left: -25px;
-    top: 173px;
+    height: 147px;
+    left: -135px;
+    top: 138px;
   }
 `;
 
@@ -141,38 +145,38 @@ const Title = styled.div`
 
   color: #283447;
   @media (max-width: 1100px) {
-    font-size: 26px;
-    line-height: 19px;
+    font-size: 35px;
+    line-height: 17px;
     width: 100%;
-    height: 35px;
-    left: 387px;
+    height: 38px;
+    left: 550px;
     top: 188px;
   }
   @media (max-width: 930px) {
-    font-size: 26px;
+    font-size: 31px;
     line-height: 19px;
     width: 100%;
     height: 35px;
-    left: 387px;
-    top: 188px;
+    left: 432px;
+    top: 171px;
   }
 
   @media (max-width: 720px) {
-    font-size: 26px;
+    font-size: 23px;
     line-height: 19px;
     width: 100%;
     height: 35px;
-    left: 387px;
-    top: 188px;
+    left: 317px;
+    top: 198px;
   }
 
   @media (max-width: 440px) {
-    font-size: 26px;
-    line-height: 19px;
+    font-size: 16px;
+    line-height: 6px;
     width: 100%;
-    height: 35px;
-    left: 387px;
-    top: 188px;
+    height: 29px;
+    left: 54%;
+    top: 158px;
   }
 `;
 
@@ -193,38 +197,38 @@ const Text = styled.div`
 
   color: #0f1d32;
   @media (max-width: 1100px) {
-    font-size: 15px;
-    line-height: 3px;
+    font-size: 20px;
+    line-height: 5px;
     width: 100%;
     height: 58px;
-    left: 389px;
+    left: 564px;
     top: 255px;
   }
   @media (max-width: 930px) {
-    font-size: 15px;
-    line-height: 3px;
+    font-size: 18px;
+    line-height: 4px;
     width: 100%;
     height: 58px;
-    left: 389px;
-    top: 255px;
+    left: 445px;
+    top: 220px;
   }
 
   @media (max-width: 720px) {
-    font-size: 15px;
+    font-size: 14px;
     line-height: 3px;
     width: 100%;
     height: 58px;
-    left: 389px;
-    top: 255px;
+    left: 322px;
+    top: 247px;
   }
 
   @media (max-width: 440px) {
-    font-size: 15px;
+    font-size: 9px;
     line-height: 3px;
     width: 100%;
     height: 58px;
-    left: 389px;
-    top: 255px;
+    left: 54%;
+    top: 190px;
   }
 `;
 
@@ -251,38 +255,38 @@ const InfoWrapper = styled.div`
 
   color: #0f1d32;
   @media (max-width: 1100px) {
-    font-size: 14px;
-    line-height: 18px;
-    width: 54%;
+    font-size: 17px;
+    line-height: 19px;
+    width: 56%;
     height: 302px;
-    left: 250px;
-    top: 342px;
+    left: 349px;
+    top: -275px;
   }
   @media (max-width: 930px) {
-    font-size: 14px;
-    line-height: 18px;
-    width: 54%;
+    font-size: 16px;
+    line-height: 19px;
+    width: 58%;
     height: 302px;
-    left: 250px;
-    top: -241px;
+    left: 263px;
+    top: -262px;
   }
 
   @media (max-width: 720px) {
     font-size: 14px;
-    line-height: 18px;
-    width: 54%;
-    height: 302px;
-    left: 250px;
-    top: 342px;
+    line-height: 19px;
+    width: 57%;
+    height: 304px;
+    left: 193px;
+    top: -237px;
   }
 
   @media (max-width: 440px) {
-    font-size: 14px;
-    line-height: 18px;
-    width: 54%;
+    font-size: 12px;
+    line-height: 14px;
+    width: 52%;
     height: 302px;
-    left: 250px;
-    top: 342px;
+    left: 32%;
+    top: -225px;
   }
 `;
 
@@ -309,8 +313,8 @@ const TeamTitle = styled.div`
     font-size: 31px;
     line-height: 17px;
     width: 100%;
-    height: 60px;
-    left: 90px;
+    height: 40px;
+    left: -10px;
     top: 756px;
   }
   @media (max-width: 930px) {
@@ -328,16 +332,16 @@ const TeamTitle = styled.div`
     width: 100%;
     height: 60px;
     left: 7px;
-    top: 756px;
+    top: 717px;
   }
 
   @media (max-width: 440px) {
-    font-size: 31px;
-    line-height: 17px;
+    font-size: 26px;
+    line-height: 16px;
     width: 100%;
     height: 60px;
-    left: 90px;
-    top: 756px;
+    left: -3%;
+    top: 636px;
   }
 `;
 
@@ -407,6 +411,24 @@ const PersonImg = styled.div`
   background: transparent url(${(props) => props.background}) top center
     no-repeat;
   background-size: contain;
+  @media (max-width: 1100px) {
+    width: 198px;
+    height: 192px;
+  }
+  @media (max-width: 930px) {
+    width: 188px;
+    height: 182px;
+  }
+
+  @media (max-width: 720px) {
+    width: 188px;
+    height: 162px;
+  }
+
+  @media (max-width: 440px) {
+    width: 188px;
+    height: 142px;
+  }
 `;
 const PersonalInfoWrapper = styled.div`
   display: flex;
