@@ -75,6 +75,7 @@ const Wrapper = styled.div`
   @media (max-width: 1100px) {
     width: ${(props) => !props.position && "71%"};
     top: ${(props) => !props.position && "1595px"};
+    left: ${(props) => props.left && "15%"};
   }
   @media (max-width: 930px) {
     width: ${(props) => !props.position && "71%"};

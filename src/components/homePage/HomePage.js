@@ -1,11 +1,11 @@
 import React, { useRef } from "react";
 import styled from "styled-components/macro";
 import solarPanelImg from "../assets/solarPanelImg.png";
+import nftFrame from "../assets/nftFrame.png";
 import CountdownMonths from "../countDownTimer/CountdownTimer";
 import SolarNFT from "../solarNFT/SolarNFT";
 import BuySolarInfo from "../buySolar/BuySolarInfo";
 import HomePageAbout from "../about/HomePageAbout";
-import GalleryNFT from "../gallery/GalleryNFT";
 import HomePageGallery from "../gallery/HomePageGallery";
 import BuyNft from "../buyNFT/BuyNft";
 import RoadmapComponent from "../roadmap/RoadmapComponent";
@@ -48,7 +48,7 @@ const HomePage = ({ roadmapRef }) => {
         width="62%"
         left="20%"
       />
-      <GalleryNFT nftCount={320} top={"1500px"} overflow="auto" />
+      <NftGallery />
       <Roadmap id="roadmap-section">Roadmap</Roadmap>
       <RoadmapComponent roadmapRef={roadmapRef} />
       <WrapperFAQ id="my-section">
@@ -109,13 +109,13 @@ const SolarPanelImg = styled.div`
   }
 
   @media (max-width: 720px) {
-    height: 250px;
-    top: 385px;
+    height: 300px;
+    top: 399px;
   }
 
   @media (max-width: 440px) {
-    height: 200px;
-    top: 350px;
+    height: 221px;
+    top: 359px;
   }
 `;
 
@@ -219,18 +219,26 @@ const Roadmap = styled.div`
   text-align: center;
   color: #283447;
   @media (max-width: 1100px) {
-    font-size: 25px;
+    font-size: 33px;
     line-height: 28px;
+    top: 2126px;
+  }
+  @media (max-width: 930px) {
+    font-size: 29px;
+    line-height: 28px;
+    top: 1967px;
   }
 
   @media (max-width: 720px) {
-    font-size: 20px;
+    font-size: 25px;
     line-height: 22px;
+    top: 1842px;
   }
 
   @media (max-width: 440px) {
     font-size: 15px;
     line-height: 19px;
+    top: 1621px;
   }
 `;
 
@@ -246,6 +254,21 @@ const WrapperFAQ = styled.div`
   align-content: center;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1100px) {
+    top: 2824px;
+  }
+  @media (max-width: 930px) {
+    top: 2624px;
+  }
+
+  @media (max-width: 720px) {
+    top: 2460px;
+  }
+
+  @media (max-width: 440px) {
+    top: 2224px;
+  }
 `;
 
 const FaqTittle = styled.div`
@@ -270,8 +293,10 @@ const FaqTittle = styled.div`
   }
 
   @media (max-width: 440px) {
-    font-size: 15px;
-    line-height: 19px;
+    font-size: 22px;
+    line-height: 9px;
+    position: relative;
+    top: -120px;
   }
 `;
 const FaqWrapper = styled.div`
@@ -290,12 +315,41 @@ const FaqWrapper = styled.div`
   }
 
   @media (max-width: 720px) {
-    width: 481px;
+    width: 452px;
     height: 218px;
   }
 
   @media (max-width: 440px) {
     width: 381px;
     height: 118px;
+    position: relative;
+    top: -128px;
+  }
+`;
+
+const NftGallery = styled.div`
+  position: relative;
+  width: 100%;
+  top: 1527px;
+  height: 303px;
+  background: transparent url(${nftFrame}) top center no-repeat;
+  background-size: contain;
+  @media (max-width: 1100px) {
+    width: 100%;
+    top: 1552px;
+  }
+  @media (max-width: 930px) {
+    width: 100%;
+    top: 1469px;
+  }
+
+  @media (max-width: 720px) {
+    width: 100%;
+    top: 1380px;
+  }
+
+  @media (max-width: 440px) {
+    width: 100%;
+    top: 1207px;
   }
 `;

@@ -12,7 +12,6 @@ root.render(
   <Provider Provider store={store}>
     <React.StrictMode>
       <GlobalStyle />
-
       <App />
     </React.StrictMode>
   </Provider>

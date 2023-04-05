@@ -17,11 +17,11 @@ const GlobalStyle = createGlobalStyle`
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;  
-   overflow:scroll ;
-      width:100% ;
-    //Disable touch zooming and scrolling. Important to reenable on buttons, menus, etc.
-    touch-action: none;
 
+      width:100% ;
+   
+
+height:100% ;
     margin: 0;
     padding: 0;
 

@@ -47,10 +47,25 @@ export default Footer;
 const Wrapper = styled.div`
   position: ${(props) => (props.position ? props.position : "absolute")};
   width: 100%;
-
+  height: 100%;
   top: ${(props) => props.top && props.top};
 
   background: #fcfeff;
+
+  @media (max-width: 1100px) {
+    top: ${(props) => props.top && "3387px"};
+  }
+  @media (max-width: 930px) {
+    top: ${(props) => props.top && "3203px"};
+  }
+
+  @media (max-width: 720px) {
+    top: ${(props) => props.top && "3000px"};
+  }
+
+  @media (max-width: 440px) {
+    top: ${(props) => props.top && "2767px"};
+  }
 `;
 
 const GreenWrapper = styled.div`
@@ -72,17 +87,36 @@ const InnerFrame = styled.div`
   align-items: center;
   padding: 0px;
   gap: 20px;
-
   position: absolute;
   width: 60%;
-
   left: 250px;
   top: 59px;
+  @media (max-width: 1100px) {
+    width: 60%;
+    left: 159px;
+    top: 59px;
+  }
+  @media (max-width: 930px) {
+    width: 72%;
+    left: 80px;
+    top: 71px;
+  }
+
+  @media (max-width: 720px) {
+    width: 69%;
+    left: 57px;
+    top: 59px;
+  }
+
+  @media (max-width: 440px) {
+    width: 84%;
+    left: 22px;
+    top: 79px;
+  }
 `;
 const Title = styled.div`
   width: 72%;
   height: 26%;
-
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
@@ -95,6 +129,28 @@ const Title = styled.div`
   /* title colour */
 
   color: #283447;
+  @media (max-width: 1100px) {
+    font-size: 24px;
+    line-height: 36px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 24px;
+    line-height: 20px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 16px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 460px) {
+    font-size: 13px;
+    line-height: 14px;
+    width: 100%;
+  }
 `;
 const Text = styled.div`
   width: 100%;
@@ -109,6 +165,28 @@ const Text = styled.div`
   /* text colour */
 
   color: #0f1d32;
+  @media (max-width: 1100px) {
+    font-size: 18px;
+    line-height: 24px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 15px;
+    line-height: 20px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 15px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 13px;
+    line-height: 14px;
+    width: 100%;
+  }
 `;
 const BlackWrapper = styled.div`
   position: absolute;

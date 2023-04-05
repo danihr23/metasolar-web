@@ -11,8 +11,8 @@ const App = () => {
   const responseHandler = useSelector((state) => state.userAddres.resHandler);
 
   return (
-    <Router>
-      <Wrapper>
+    <Wrapper>
+      <Router>
         <Navigation logoleft={"43px"} isWallet={true} />
         {responseHandler && <ResponseModal />}
         <Routes>
@@ -20,8 +20,8 @@ const App = () => {
           <Route path="/Gallery" element={<Gallery />} />
           <Route path="/About" element={<About />} />
         </Routes>
-      </Wrapper>
-    </Router>
+      </Router>
+    </Wrapper>
   );
 };
 
@@ -30,5 +30,5 @@ export default App;
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  overflow-x: hidden;
+  position: relative;
 `;

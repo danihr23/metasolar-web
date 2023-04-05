@@ -36,6 +36,7 @@ const BuyButton = ({
         fontSize={primeryFontSize}
         lineHeight={primeryLineHeight}
         color={primeryColor}
+        text={btnText}
       >
         {btnText}
       </Primery>
@@ -56,6 +57,25 @@ const Button = styled(Link)`
   background: ${(props) => props.background};
   border: ${(props) => props.border};
   border-radius: ${(props) => props.borderradius};
+
+  @media (max-width: 1100px) {
+    width: ${(props) => (props.width === "21%" ? "26%" : "78%")};
+    height: ${(props) => (props.width === "21%" ? "41%" : "78%")};
+  }
+  @media (max-width: 930px) {
+    width: ${(props) => (props.width === "21%" ? "21%" : "78%")};
+    height: ${(props) => (props.width === "21%" ? "50%" : "65%")};
+  }
+
+  @media (max-width: 720px) {
+    width: ${(props) => (props.width === "21%" ? "24%" : "80%")};
+    height: ${(props) => (props.width === "21%" ? "34%" : "67%")};
+  }
+
+  @media (max-width: 440px) {
+    width: ${(props) => (props.width === "21%" ? "24%" : "80%")};
+    height: ${(props) => (props.width === "21%" ? "34%" : "67%")};
+  }
 `;
 
 const Primery = styled.div`
@@ -80,15 +100,15 @@ const Primery = styled.div`
     width: 100%;
   }
   @media (max-width: 930px) {
-    font-size: 11px;
-    line-height: 13px;
+    font-size: 9px;
+    line-height: 9px;
     width: 100%;
     left: 1%;
   }
 
   @media (max-width: 720px) {
-    font-size: 9px;
-    line-height: 8px;
+    font-size: 7px;
+    line-height: 6px;
     width: 100%;
     left: 1%;
     right: 8%;
@@ -96,8 +116,8 @@ const Primery = styled.div`
   }
 
   @media (max-width: 440px) {
-    font-size: 6px;
-    line-height: 9px;
+    font-size: ${(props) => (props.text === "Buy" ? "9px" : "6px")};
+    line-height: 6px;
     width: 100%;
   }
 `;

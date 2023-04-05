@@ -63,6 +63,28 @@ const Title = styled.div`
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
+  @media (max-width: 1100px) {
+    font-size: 20px;
+    line-height: 17px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 18px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 16px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 40px) {
+    font-size: 13px;
+    line-height: 14px;
+    width: 100%;
+  }
 `;
 
 const Text = styled.div`
@@ -92,6 +114,28 @@ const Text = styled.div`
           
 };
         `};
+  @media (max-width: 1100px) {
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 12px;
+    line-height: 12px;
+    width: 100%;
+  }
 `;
 
 const Up = styled.div`
@@ -102,4 +146,5 @@ const Up = styled.div`
 
   background: transparent url(${(props) => (props.isOpen ? down : up)}) top
     center no-repeat;
+  background-size: contain;
 `;

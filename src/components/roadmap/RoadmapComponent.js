@@ -42,7 +42,22 @@ const Wrapper = styled.div`
   width: 30%;
   position: absolute;
   top: -1%;
+  @media (max-width: 1100px) {
+    top: -19%;
+  }
+  @media (max-width: 930px) {
+    top: -48%;
+  }
+
+  @media (max-width: 720px) {
+    top: -74%;
+  }
+
+  @media (max-width: 440px) {
+    top: -107%;
+  }
 `;
+
 const BoxesWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -54,6 +69,20 @@ const BoxesWrapper = styled.div`
 
   left: ${(props) => props.left};
   top: ${(props) => props.top};
+  @media (max-width: 1100px) {
+    left: ${(props) => (props.left === "40%" ? "9%" : "172%")};
+  }
+  @media (max-width: 930px) {
+    left: ${(props) => (props.left === "40%" ? "9%" : "172%")};
+  }
+
+  @media (max-width: 720px) {
+    left: ${(props) => (props.left === "40%" ? "9%" : "172%")};
+  }
+
+  @media (max-width: 440px) {
+    left: ${(props) => (props.left === "40%" ? "9%" : "172%")};
+  }
 `;
 
 const Title = styled.span`
@@ -66,6 +95,28 @@ const Title = styled.span`
   font-size: 24px;
   line-height: 29px;
   color: #ffffff;
+  @media (max-width: 1100px) {
+    font-size: 27px;
+    line-height: 17px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 22px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 19px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 13px;
+    line-height: 14px;
+    width: 100%;
+  }
 `;
 const Text = styled.div`
   width: 75%;
@@ -81,6 +132,28 @@ const Text = styled.div`
   /* text colour */
 
   color: #0f1d32;
+  @media (max-width: 1100px) {
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+  }
+  @media (max-width: 930px) {
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 14px;
+    line-height: 17px;
+    width: 100%;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 12px;
+    line-height: 12px;
+    width: 100%;
+  }
 `;
 
 const Box = styled.div`

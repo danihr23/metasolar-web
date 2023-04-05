@@ -69,7 +69,7 @@ const Navigation = ({
 export default Navigation;
 
 const Wrapper = styled.div`
-  position: absolute;
+  position: relative;
   display: flex;
   align-items: center;
   align-content: center;
@@ -112,6 +112,8 @@ const Logo = styled(Link)`
 
   @media (max-width: 440px) {
     height: 12px;
+    left: 9px;
+    top: 4px;
   }
 `;
 const Menu = styled.div`

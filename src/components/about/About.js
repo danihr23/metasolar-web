@@ -46,26 +46,28 @@ const About = () => {
           })}
         </TeamWrapper>
       </ContentWrapper>
-      <Footer top={"1200px"} onClickBuy={onClick} roadmapPosions={1500} />
+      <Footer position="relative" onClickBuy={onClick} roadmapPosions={1500} />
     </Wrapper>
   );
 };
 export default About;
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
-  position: relative;
+  gap: 30px;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-content: stretch;
+  align-items: center;
 `;
 const ContentWrapper = styled.div`
   width: 100%;
-  position: absolute;
+  position: relative;
 `;
 
 const GreenWrapper = styled.div`
-  position: absolute;
+  position: relative;
   width: 833px;
   height: 722px;
   left: -40px;
@@ -74,6 +76,24 @@ const GreenWrapper = styled.div`
   /* main bg */
 
   background: #daf5d0;
+  @media (max-width: 1100px) {
+    width: 65%;
+    height: 578px;
+  }
+  @media (max-width: 930px) {
+    width: 65%;
+    height: 578px;
+  }
+
+  @media (max-width: 720px) {
+    width: 65%;
+    height: 578px;
+  }
+
+  @media (max-width: 440px) {
+    width: 65%;
+    height: 578px;
+  }
 `;
 
 const Image = styled.div`
@@ -85,6 +105,23 @@ const Image = styled.div`
   border-radius: 10px;
   background: transparent url(${panelsImg}) top center no-repeat;
   background-size: contain;
+  @media (max-width: 1100px) {
+    height: 259px;
+    left: -25px;
+    top: 173px;
+  }
+
+  @media (max-width: 720px) {
+    height: 259px;
+    left: -25px;
+    top: 173px;
+  }
+
+  @media (max-width: 440px) {
+    height: 259px;
+    left: -25px;
+    top: 173px;
+  }
 `;
 
 const Title = styled.div`
@@ -103,6 +140,40 @@ const Title = styled.div`
   /* title colour */
 
   color: #283447;
+  @media (max-width: 1100px) {
+    font-size: 26px;
+    line-height: 19px;
+    width: 100%;
+    height: 35px;
+    left: 387px;
+    top: 188px;
+  }
+  @media (max-width: 930px) {
+    font-size: 26px;
+    line-height: 19px;
+    width: 100%;
+    height: 35px;
+    left: 387px;
+    top: 188px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 26px;
+    line-height: 19px;
+    width: 100%;
+    height: 35px;
+    left: 387px;
+    top: 188px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 26px;
+    line-height: 19px;
+    width: 100%;
+    height: 35px;
+    left: 387px;
+    top: 188px;
+  }
 `;
 
 const Text = styled.div`
@@ -121,14 +192,48 @@ const Text = styled.div`
   /* text colour */
 
   color: #0f1d32;
+  @media (max-width: 1100px) {
+    font-size: 15px;
+    line-height: 3px;
+    width: 100%;
+    height: 58px;
+    left: 389px;
+    top: 255px;
+  }
+  @media (max-width: 930px) {
+    font-size: 15px;
+    line-height: 3px;
+    width: 100%;
+    height: 58px;
+    left: 389px;
+    top: 255px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 15px;
+    line-height: 3px;
+    width: 100%;
+    height: 58px;
+    left: 389px;
+    top: 255px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 15px;
+    line-height: 3px;
+    width: 100%;
+    height: 58px;
+    left: 389px;
+    top: 255px;
+  }
 `;
 
 const InfoWrapper = styled.div`
-  position: absolute;
+  position: relative;
   width: 680px;
   height: 396px;
   left: 450px;
-  top: 359px;
+  top: -306px;
   padding: 29px;
   display: flex;
   justify-content: center;
@@ -145,14 +250,48 @@ const InfoWrapper = styled.div`
   /* text colour */
 
   color: #0f1d32;
+  @media (max-width: 1100px) {
+    font-size: 14px;
+    line-height: 18px;
+    width: 54%;
+    height: 302px;
+    left: 250px;
+    top: 342px;
+  }
+  @media (max-width: 930px) {
+    font-size: 14px;
+    line-height: 18px;
+    width: 54%;
+    height: 302px;
+    left: 250px;
+    top: -241px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 14px;
+    line-height: 18px;
+    width: 54%;
+    height: 302px;
+    left: 250px;
+    top: 342px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 14px;
+    line-height: 18px;
+    width: 54%;
+    height: 302px;
+    left: 250px;
+    top: 342px;
+  }
 `;
 
 const TeamTitle = styled.div`
   position: absolute;
   width: 465px;
   height: 39px;
-  left: 408px;
-  top: 815px;
+  left: 355px;
+  top: 898px;
 
   font-family: "Inter";
   font-style: normal;
@@ -166,6 +305,40 @@ const TeamTitle = styled.div`
   /* title colour */
 
   color: #283447;
+  @media (max-width: 1100px) {
+    font-size: 31px;
+    line-height: 17px;
+    width: 100%;
+    height: 60px;
+    left: 90px;
+    top: 756px;
+  }
+  @media (max-width: 930px) {
+    font-size: 31px;
+    line-height: 17px;
+    width: 100%;
+    height: 60px;
+    left: 7px;
+    top: 756px;
+  }
+
+  @media (max-width: 720px) {
+    font-size: 31px;
+    line-height: 17px;
+    width: 100%;
+    height: 60px;
+    left: 7px;
+    top: 756px;
+  }
+
+  @media (max-width: 440px) {
+    font-size: 31px;
+    line-height: 17px;
+    width: 100%;
+    height: 60px;
+    left: 90px;
+    top: 756px;
+  }
 `;
 
 const TeamWrapper = styled.div`
@@ -177,9 +350,44 @@ const TeamWrapper = styled.div`
   gap: 16px;
   position: relative;
   width: 100%;
-  height: 300px;
-  top: 884px;
+  height: 100%;
+  top: -137px;
   justify-content: center;
+
+  @media (max-width: 1100px) {
+    flex-wrap: wrap;
+
+    gap: 18px;
+    width: 100%;
+    height: 100%;
+    top: -130px;
+  }
+  @media (max-width: 930px) {
+    flex-wrap: wrap;
+
+    gap: 18px;
+    width: 100%;
+    height: 100%;
+    top: -130px;
+  }
+
+  @media (max-width: 720px) {
+    flex-wrap: wrap;
+
+    gap: 18px;
+    width: 100%;
+    height: 100%;
+    top: -130px;
+  }
+
+  @media (max-width: 440px) {
+    flex-wrap: wrap;
+
+    gap: 18px;
+    width: 100%;
+    height: 100%;
+    top: -130px;
+  }
 `;
 const PersonInfoWrapper = styled.div`
   display: flex;
